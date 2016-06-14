@@ -1,0 +1,404 @@
+/**
+ * Section
+ */
+section{
+    padding-top: 16px;
+    padding-bottom: 84px; 
+    word-spacing: -0.43em;
+}
+
+section > header{
+    margin:16px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    width: 100%;
+    text-align: left;
+}
+section > header h1, .title-display{
+    font-family: "Static Bold";
+    font-size: 34px;
+}
+
+/**
+ * Cards
+ */
+.align--left{
+    float:left;
+    text-align: left !important;
+}
+.align--right{
+    float:right;
+    text-align: right !important;
+}
+.align--center{
+    text-align: center !important;
+}
+.align--clear{
+    clear: both;
+    display: block !important;
+}
+.align--justify{
+    text-align: justify !important;
+}
+.card_row--header.align--center, .card_row--header.align--left, .card_row--header.align--right, .card_row--text.align--center, .card_row--text.align--left, .card_row--text.align--right, .card_row.align--center, .card_row.align--left, .card_row.align--right{
+    float:none;
+} 
+
+.card {
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.card .card_margin{
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.card > .card_margin > .card_box{
+    margin-top: .25em;
+    margin-bottom: .25em;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    /*overflow: hidden;*/
+}
+.card > .card_margin > .card_box > :first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card > .card_margin > .card_box > :last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.card--divider:not(:last-child){
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+
+
+.card_row {
+    padding-right: 8px;
+    min-height: 48px;
+    text-align: left;
+    
+    clear: both;
+}
+.card_row.card_row--large {
+    padding-right: 16px;
+    min-height: 72px;
+    text-align: left;
+}
+
+.card_row.card_row--inline-controls{
+    line-height: 48px;
+}
+.card_row.card_row--inline-controls.card_row--large{
+    line-height: 72px;
+}
+.card_row.card_row--inline-controls > *, .card_row.card_row--inline-controls div[class*="align--"] > *{
+    display: inline;
+}
+.card_row.card_row--inline-controls a.button, .card_row .togglebutton{
+    display: inline-block;
+}
+
+.card_row .avatar, .card_row .checkbox, .card_row .radiobutton, .card_row .switch,
+.card_row .body--light, .card_row .body, .card_row .body--semibold, .card_row .body--bold,
+.card_row .caption, .card_row .caption--upper, .card_row .caption--bold, .card_row .subtitle,
+.card_row .header_title, .card_row .header_subtitle, .card_row .title-display,
+.card_row .text--two-line, .card_row .icon,
+.card_row .icontoggle{
+    height: 48px;
+    line-height: 48px;
+    margin: 0 0 0 8px;
+}
+
+.card_row.card_row--large .avatar, .card_row.card_row--large .checkbox, .card_row.card_row--large .radiobutton, .card_row.card_row--large .switch,
+.card_row.card_row--large .body--light, .card_row.card_row--large .body, .card_row.card_row--large .body--semibold, .card_row.card_row--large .body--bold,
+.card_row.card_row--large .caption, .card_row.card_row--large .caption--upper, .card_row.card_row--large .caption--bold, .card_row.card_row--large .subtitle,
+.card_row.card_row--large .header_title, .card_row.card_row--large .header_subtitle, .card_row.card_row--large .title-display,
+.card_row.card_row--large .text--two-line, .card_row.card_row--large .icon,
+.card_row.card_row--large .icontoggle{
+    height: 48px;
+    line-height: 48px;
+    margin: 26px 0 26px 16px;
+}
+.card_row.card_row--large .avatar img{
+    margin:17px 7px;
+}
+.card_row.card_row--large .checkbox_box-outline, .card_row.card_row--large .radiobutton_box-outline, .card_row.card_row--large .switch_box-outline{
+    margin-top: 24px;
+}
+.card_row.card_row--large .checkbox:before, .card_row.card_row--large .radiobutton:before, .card_row.card_row--large .switch:before{
+    margin-top: 14px;
+}
+
+.card_row .togglebutton{
+    height: 36px;
+    margin: 0px 0 0 8px;
+    top:6px;
+}
+.card_row.card_row--large .togglebutton{
+    height: 36px;
+    margin: 18px 0 18px 16px;
+    top:0px;
+}
+
+.card_row .button{
+    height: 36px;
+    line-height: 36px;
+    margin: 0 0 0 8px;
+}
+.card_row.card_row--large .button{
+    height: 36px;
+    line-height: 36px;
+    margin: 18px 0 18px 16px;/*?*/
+}
+
+.card_row .dropdown{
+    height: 48px;
+    line-height: 48px;
+    display: inline;
+    margin: 0 0 0 8px;
+}
+.card_row.card_row--large .dropdown{
+    height: 72px;
+    line-height: 72px;
+    display: inline;
+    margin: 0 0 0 16px;
+}
+
+.card_row .tab .tab_button{
+    line-height: 48px;
+}
+.card_row.card_row--large .tab .tab_button{
+    line-height: 72px;
+}
+
+
+
+.card_row.card_row--scroll {
+    overflow: auto;
+    /*word-spacing: -0.43em;*/
+    word-spacing: -0.30em;
+}
+.card_row.card_row--header {
+    padding: 16px;
+    min-height: 56px;
+}
+.header_title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: "Open Sans SemiBold";
+    font-weight: normal;
+    display: block;
+}
+.header_subtitle {
+    margin: 0;
+    font-size: 20px;
+    font-family: "Open Sans Light";
+    font-weight: normal;
+    display: block;
+}
+.card_row.card_row--header > *{
+    display: block !important;
+    margin-left:0 !important;
+    line-height: 30px !important;
+    height: auto !important;
+}
+
+
+.card_row--header.header--ellipsis .header_title, .card_row--header.header--ellipsis .header_subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card_row.card_row--text {
+    padding:16px;
+    font-family: "Open Sans";
+    font-size: 16px;
+    color: rgba(0,0,0,0.87);
+}
+
+.card_row--text > :not(:last-child){
+    margin-bottom: 16px;
+}
+
+.card_row.card_row--image-cover{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+.card_row.card_row--image-contain{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0;
+}
+.card_row.card_row--chart {
+    padding: 20px;
+    overflow: hidden;
+}
+/*gambiarra para ocultar os erros do GoogleCharts Material Beta*/
+.card_row--chart div:first-child > div > span{
+    display: none !important;
+}
+.card_row.card_row--youtube{
+    padding: 0;
+}
+.card_row--youtube > iframe{
+    width: 100%;
+    height: 100%;
+}
+.card > .card_margin > .card_box > .card_row--youtube:first-child > iframe{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card > .card_margin > .card_box > .card_row--youtube:last-child > iframe{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card > .card_margin > .card_box > .card_row:first-child > .list{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card > .card_margin > .card_box > .card_row:last-child > .list{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card_row.card_row--table{
+    padding: 0;
+    overflow: auto;
+    /*word-spacing: -0.43em;*/
+    word-spacing: -0.30em;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.card_row.card_row--medium{
+    min-height: 56px;
+    padding-right: 8px;
+}
+.card_row--medium .avatar, .card_row--medium .checkbox, .card_row--medium .radiobutton, .card_row--medium .switch,
+.card_row--medium .body--light, .card_row--medium .body, .card_row--medium .body--semibold, .card_row--medium .body--bold,
+.card_row--medium .caption, .card_row--medium .caption--upper, .card_row--medium .caption--bold, .card_row--medium .subtitle,
+.card_row--medium .header_title, .card_row--medium .header_subtitle, .card_row--medium .title-display,
+.card_row--medium .text--two-line{
+    margin:0;
+    margin-left: 8px;
+    margin-top:4px;
+    margin-bottom:0px;
+    //background: blueviolet;
+}
+.card_row--medium .body--light, .card_row--medium .body, .card_row--medium .body--semibold, .card_row--medium .body--bold,
+.card_row--medium .caption, .card_row--medium .caption--upper, .card_row--medium .caption--bold, .card_row--medium .subtitle,
+.card_row--medium .header_title, .card_row--medium .header_subtitle, .card_row--medium .title-display,
+.card_row--medium .text--two-line{
+    line-height: 56px;
+    display: inline;
+    overflow: hidden;
+}
+.card_row--medium .button, .card_row--medium .icontoggle, .card_row--medium .togglebutton, .card_row--medium .icon {
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 8px;
+}
+.card_row--medium .dropdown{
+    height: 56px;
+    margin-left: 8px;
+}
+.card_row--medium .tab .tab_button{
+    line-height: 56px;
+}
+
+.card_row.card_row--large{
+    min-height: 72px;
+    padding-right: 16px;
+}
+.card_row--large .avatar, .card_row--large .checkbox, .card_row--large .radiobutton, .card_row--large .switch,
+.card_row--large .body--light, .card_row--large .body, .card_row--large .body--semibold, .card_row--large .body--bold,
+.card_row--large .caption, .card_row--large .caption--upper, .card_row--large .caption--bold, .card_row--large .subtitle,
+.card_row--large .header_title, .card_row--large .header_subtitle, .card_row--large .title-display,
+.card_row--large .text--two-line{
+    margin-left: 16px;
+    margin-right: 0;
+    margin-top:10px;
+    margin-bottom:10px;
+    //background: greenyellow;
+}
+.card_row--large .body--light, .card_row--large .body, .card_row--large .body--semibold, .card_row--large .body--bold,
+.card_row--large .caption, .card_row--large .caption--upper, .card_row--large .caption--bold, .card_row--large .subtitle,
+.card_row--large .header_title, .card_row--large .header_subtitle, .card_row--large .title-display,
+.card_row--large .text--two-line{
+    line-height: 72px;
+    display: inline;
+    overflow: hidden;
+}
+.card_row--large .button, .card_row--large .icontoggle, .card_row--large .togglebutton, .card_row--large .icon{
+    margin-left: 16px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.card_row--large .dropdown{
+    height: 72px;
+    margin-left: 16px;
+}
+.card_row--large .tab .tab_button{
+    line-height: 72px;
+}
+
+
+
+
+/**
+* xsm (xsmall)
+* >= 480px
+*/
+@media screen and (min-width: 30em) {
+}
+/**
+* sm (small)
+* >= 600px
+*/
+@media screen and (min-width: 37.5em) {
+
+}
+/**
+* md (medium)
+* >= 768px
+*/
+@media screen and (min-width: 48em) {
+}
+/**
+* lg (large)
+* >= 1024px
+*/
+@media screen and (min-width: 64em) {
+
+}
+/**
+* xlg (xlg)
+* >= 1280px
+*/
+@media screen and (min-width: 80em) {
+
+}
+/**
+* xxlg (xxlarge)
+* >= 1920px
+*/
+@media screen and (min-width: 120em) {
+}

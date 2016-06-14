@@ -1,0 +1,938 @@
+/*
+Theme
+*/
+
+
+/*Light Theme / White Theme
+================================================*/
+section.light-theme{
+    background-color: rgb(238,238,238);
+}
+section.white-theme{
+    background-color: rgb(255,255,255);
+}
+section.light-theme > header > h1, section.white-theme > header > h1{
+    color: rgba(0,0,0,.87);
+}
+.card_box.light-theme {
+    background-color: rgb(238,238,238);
+}
+.card_box.white-theme {
+    background-color: rgb(255,255,255);
+}
+.card_row.card_row--header.light-theme, .card_row--text.light-theme, .card_row.light-theme, .card_rich-area.light-theme, .card_row.card_row--scroll.light-theme{
+    background-color: rgb(238,238,238);
+}
+.card_row.card_row--header.white-theme, .card_row--text.white-theme, .card_row.white-theme, .card_rich-area.white-theme, .card_row.card_row--scroll.white-theme{
+    background-color: rgb(255,255,255);
+}
+.card_row.card_row--header.light-theme .header_title, .card_row.card_row--header.light-theme .header_subtitle, .card_row--text.light-theme, .card_row.light-theme{
+    color: rgba(0,0,0,.87);
+}
+.card_row.card_row--header.white-theme .header_title, .card_row.card_row--header.white-theme .header_subtitle, .card_row--text.white-theme, .card_row.white-theme{
+    color: rgba(0,0,0,.87);
+}
+.avatar.light-theme{
+    color: rgba(0,0,0,.87);
+}
+.avatar.white-theme{
+    color: rgba(0,0,0,.87);
+}
+
+
+/*Dark Theme
+================================================*/
+section.dark-theme{
+    background-color: rgb(51,51,51);
+}
+section.dark-theme > header > h1{
+    color: rgba(255,255,255,.87);
+}
+.card_box.dark-theme {
+    background-color: rgb(51,51,51);
+}
+.card_row.card_row--header.dark-theme, .card_row--text.dark-theme, .card_row.dark-theme, .card_rich-area.dark-theme, .card_row.card_row--scroll.dark-theme{
+    background-color: rgb(51,51,51);  
+}
+.card_row.card_row--header.dark-theme .header_title, .card_row.card_row--header.dark-theme .header_subtitle, .card_row--text.dark-theme, .card_row.dark-theme{
+    color: rgba(255,255,255,.87);
+}
+.avatar.dark-theme{
+    color: rgba(255,255,255,.87);
+}
+
+/**
+Main
+=======================
+*/
+main{
+    background-color: rgb(238,238,238);
+}
+
+/**
+Nav
+=======================
+*/
+/*white*/
+#nav[class*="white"]{
+    background: white;
+}
+#nav[class*="white"] .nav-list_item a,
+#nav[class*="white"] .nav-list_item .subtitle{
+    color:rgb(0,0,0);
+}
+#nav[class*="white"] .nav-list_item a:hover{
+    background-color: rgba(153, 153, 153,.2);
+}
+
+/*green*/
+#nav[class*="green"] .nav-list_item.is-active a{
+    color:rgb(0,166,0);
+}
+/*blue*/
+#nav[class*="blue"] .nav-list_item.is-active a{
+    color:rgb(18, 157,227);
+}
+/*yellow*/
+#nav[class*="yellow"] .nav-list_item.is-active a{
+    color:rgb(247, 170,6);
+}
+
+/**
+Header
+=======================
+*/
+/*light & white*/
+header[class*="light"] .header_title,
+header[class*="white"] .header_title{
+    color:rgb(0,0,0);
+}
+header[class*="light"]{
+    background: rgb(238,238,238);
+}
+header[class*="white"]{
+    background: rgb(255,255,255);
+}
+
+/*dark*/
+header[class*="dark"] .header_title{
+    color:rgb(255,255,255);
+}
+header[class*="dark"]{
+    background: rgb(51,51,51);
+}
+/*green*/
+header[class*="green"]{
+    background: rgb(0,166,0);
+}
+/*blue*/
+header[class*="blue"]{
+    background: rgb(18, 157,227);
+}
+/*yellow*/
+header[class*="yellow"]{
+    background:  rgb(247, 170,6);
+}
+
+
+/**
+Checkbox
+=======================
+*/
+/*light*/
+.checkbox[class*="-light"] .checkbox_label{
+    color:rgba(0,0,0,.87);
+}
+.checkbox[class*="-light"] .checkbox_box-outline{
+    border-color: rgba(0,0,0,.87);
+}
+.checkbox[class*="-light"].is-disabled .checkbox_box-outline{
+    border-color: rgb(0,0,0) !important;
+}
+.checkbox[class*="-light"].is-disabled.is-checked .checkbox_tick-outline{
+    background: rgb(0,0,0) !important;
+    color: rgb(255,255,255) !important;
+}
+.checkbox[class*="-light"].is-checked .checkbox_tick-outline{
+    color: rgb(255,255,255);
+}
+/*dark*/
+.checkbox[class*="-dark"] .checkbox_label{
+    color:rgba(255,255,255,.87);
+}
+.checkbox[class*="-dark"] .checkbox_box-outline{
+    border-color: rgba(255,255,255,.87);
+}
+.checkbox[class*="-dark"].is-disabled .checkbox_box-outline{
+    border-color: rgb(255,255,255) !important;
+}
+.checkbox[class*="-dark"].is-disabled.is-checked .checkbox_tick-outline{
+    background: rgb(255,255,255) !important;
+    color: rgb(0,0,0) !important;
+}
+.checkbox[class*="-dark"].is-checked .checkbox_tick-outline{
+    color: rgb(51,51,51);
+}
+
+/*green*/
+.checkbox[class*="green"].is-checked .checkbox_box-outline{
+    border-color: rgb(0,166,0);
+}
+.checkbox[class*="green"].is-checked .checkbox_tick-outline{
+    background: rgb(0,166,0);
+}
+.checkbox[class*="green"]:before{
+    background: rgba(0, 125, 0, .3);
+}
+
+/*blue*/
+.checkbox[class*="blue"].is-checked .checkbox_box-outline{
+    border-color: rgb(18,157,227);
+}
+.checkbox[class*="blue"].is-checked .checkbox_tick-outline{
+    background: rgb(18,157,227);
+}
+.checkbox[class*="blue"]:before{
+    background: rgba(24, 95, 156, .3);
+}
+
+/*yellow*/
+.checkbox[class*="yellow"].is-checked .checkbox_box-outline{
+    border-color: rgb(247, 170,6);
+}
+.checkbox[class*="yellow"].is-checked .checkbox_tick-outline{
+    background: rgb(247, 170,6);
+}
+.checkbox[class*="yellow"]:before{
+    background: rgba(209, 144, 5, .3);
+}
+
+
+
+/**
+Radiobutton
+=======================
+*/
+/*light*/
+.radiobutton[class*="-light"] .radiobutton_label{
+    color:rgba(0,0,0,.87);
+}
+.radiobutton[class*="-light"] .radiobutton_box-outline{
+    border-color: rgba(0,0,0,.87);
+}
+.radiobutton[class*="-light"].is-disabled .radiobutton_box-outline{
+    border-color: rgb(0,0,0) !important;
+}
+.radiobutton[class*="-light"].is-disabled.is-checked .radiobutton_tick-outline{
+    background: rgb(0,0,0) !important;
+}
+/*dark*/
+.radiobutton[class*="-dark"] .radiobutton_label{
+    color:rgba(255,255,255,.87);
+}
+.radiobutton[class*="-dark"] .radiobutton_box-outline{
+    border-color: rgba(255,255,255,.87);
+}
+.radiobutton[class*="-dark"].is-disabled .radiobutton_box-outline{
+    border-color: rgb(255,255,255) !important;
+}
+.radiobutton[class*="-dark"].is-disabled.is-checked .radiobutton_tick-outline{
+    background: rgb(255,255,255) !important;
+}
+
+/*green*/
+.radiobutton[class*="green"] .radiobutton_tick-outline{
+    background: rgb(0,166,0);   
+}
+.radiobutton[class*="green"].is-checked .radiobutton_box-outline{
+    border-color: rgb(0,166,0);
+}
+.radiobutton[class*="green"].is-checked .radiobutton_box-outline{
+    border-color: rgb(0,166,0);
+}
+.radiobutton[class*="green"]:before{
+    background: rgba(0,126,0, .3);
+}
+
+/*blue*/
+.radiobutton[class*="blue"] .radiobutton_tick-outline{
+    background: rgb(18,157,227);   
+}
+.radiobutton[class*="blue"].is-checked .radiobutton_box-outline{
+    border-color: rgb(18,157,227);  
+}
+.radiobutton[class*="blue"].is-checked .radiobutton_box-outline{
+    border-color: rgb(18,157,227);
+}
+.radiobutton[class*="blue"]:before{
+    background: rgba(24,95,156, .3);
+}
+
+/*yellow*/
+.radiobutton[class*="yellow"] .radiobutton_tick-outline{
+    background: rgb(247, 170,6);   
+}
+.radiobutton[class*="yellow"].is-checked .radiobutton_box-outline{
+    border-color: rgb(247, 170,6);  
+}
+.radiobutton[class*="yellow"].is-checked .radiobutton_box-outline{
+    border-color: rgb(247, 170,6);
+}
+.radiobutton[class*="yellow"]:before{
+    background: rgba(209, 144, 5, .3);
+}
+
+
+/**
+Switch
+=======================
+*/
+/*light*/
+.switch[class*="light"] .switch_label{
+    color:rgba(0,0,0,.87);
+}
+.switch[class*="light"] .switch_box-outline{
+    border-color: rgba(0,0,0,.87);
+}
+.switch[class*="light"] .switch_tick-outline{
+    background: rgba(0,0,0,.87);
+}
+.switch[class*="light"].is-checked .switch_tick-outline{
+    background: rgb(238,238,238);
+}
+.switch[class*="light"].is-disabled .switch_box-outline{
+    border-color: rgb(0,0,0) !important;
+    background: transparent !important;
+}
+.switch[class*="light"].is-disabled.is-checked .switch_box-outline{
+    background: rgb(0,0,0)!important;
+}
+.switch[class*="light"].is-disabled.is-checked .switch_tick-outline{
+    background: rgb(238, 238, 238) !important;
+}
+/*dark*/
+.switch[class*="dark"] .switch_label{
+    color:rgba(255,255,255,.87);
+}
+.switch[class*="dark"] .switch_box-outline{
+    border-color: rgba(255,255,255,.87);
+}
+.switch[class*="dark"] .switch_tick-outline{
+    background: rgba(255,255,255,.87);
+}
+.switch[class*="dark"].is-checked .switch_tick-outline{
+    background: rgb(51,51,51);
+}
+.switch[class*="dark"].is-disabled .switch_box-outline{
+    border-color: rgb(255,255,255) !important;
+    background: transparent !important;
+}
+.switch[class*="dark"].is-disabled.is-checked .switch_box-outline{
+    background: rgb(255,255,255)!important;
+}
+.switch[class*="dark"].is-disabled.is-checked .switch_tick-outline{
+    background: rgb(51, 51, 51) !important;
+}
+
+/*green*/
+.switch[class*="green"].is-checked .switch_box-outline{
+    border-color: rgb(0,166,0);
+    background: rgb(0,166,0);
+}
+.switch[class*="green"] .switch_tick-outline:before{
+    background: rgba(0,126, 0, .3);
+}
+
+/*blue*/
+.switch[class*="blue"].is-checked .switch_box-outline{
+    border-color: rgb(18, 157,227);
+    background: rgb(18, 157,227);
+}
+.switch[class*="blue"] .switch_tick-outline:before{
+    background: rgba(24, 95, 156, .3);
+}
+
+/*yellow*/
+.switch[class*="yellow"].is-checked .switch_box-outline{
+    border-color: rgb(247, 170,6);
+    background: rgb(247, 170,6);
+}
+.switch[class*="yellow"] .switch_tick-outline:before{
+    background: rgba(209, 144, 5, .3);
+}
+
+
+
+
+
+/**
+Button
+=======================
+*/
+.button:hover{
+    background-color:rgba(153,153,153, .2);
+} 
+.button:active, .button.is-active{
+    background-color:rgba(153,153,153,.4);
+} 
+.button--raised-primary{
+    color:rgba(255,255,255,.87);
+}
+.button--raised-secondary{
+    background-color:white;
+}
+
+/*light*/
+.button[class*="flat"][class*="light"]{
+    color: rgba(0,0,0,.87);
+}
+.button[class*="light"]:disabled, .button[class*="light"].is-disabled{
+    color: rgba(0,0,0,.26) !important;
+    background-color: transparent !important;
+} 
+.button[class*="raised"][class*="light"]:disabled, .button[class*="raised"][class*="light"].is-disabled{
+    box-shadow:  0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: rgba(0,0,0,.12) !important;
+}
+.button[class*="light"]:active, .button[class*="light"].is-active{/*ripple*/
+    background-image: radial-gradient(circle, rgba(0,0,0,.1) 10%, rgba(255,255,255,.1) 11%);
+} 
+
+/*dark*/
+.button[class*="dark"]{
+    color: rgba(255,255,255,.87);
+}
+.button[class*="dark"]:disabled, .button[class*="dark"].is-disabled{
+    color: rgba(255,255,255,.26) !important;
+    background-color: transparent !important;
+} 
+.button[class*="raised"][class*="dark"]:disabled, .button[class*="raised"][class*="dark"].is-disabled{
+    box-shadow:  0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: rgba(255,255,255,.12) !important;
+}
+.button[class*="dark"]:active, .button[class*="dark"].is-active{/*ripple*/
+    background-image: radial-gradient(circle, rgba(255,255,255,.1) 10%, rgba(0,0,0,.1) 11%);
+} 
+
+/*green*/
+.button.button--flat[class*="green"]{
+    color: rgba(0,166,0, .87);
+}
+.button--raised-primary[class*="green"]{
+    background-color:rgb(0,166,0);
+}
+.button--raised-primary[class*="green"]:hover{
+    background-color:rgb(0,126,0);
+}
+.button--raised-secondary[class*="green"]{
+    color:rgba(0,166,0, .87);
+}
+
+
+/*blue*/
+.button.button--flat[class*="blue"]{
+    color: rgba(18, 157, 227, .87);
+}
+.button--raised-primary[class*="blue"]{
+    background-color:rgb(18, 157, 227);
+}
+.button--raised-primary[class*="blue"]:hover{
+    background-color:rgb(24, 95, 156);
+}
+.button--raised-secondary[class*="blue"]{
+    color:rgba(18, 157, 227, .87);
+}
+
+
+/*yellow*/
+.button.button--flat[class*="yellow"]{
+    color: rgba(247, 170, 6, .87);
+}
+.button--raised-primary[class*="yellow"]{
+    background-color:rgb(247, 170, 6);
+}
+.button--raised-primary[class*="yellow"]:hover{
+    background-color:rgb(209, 144, 5);
+}
+.button--raised-secondary[class*="yellow"]{
+    color:rgba(247, 170, 6, .87);
+}
+
+
+/**
+Icon Toggle
+=======================
+*/
+/*light*/
+.icontoggle[class*="light"]{
+    color: rgba(0,0,0,.87);
+}
+.icontoggle[class*="light"].is-disabled{
+    color: rgba(0,0,0,.26);
+}
+.icontoggle[class*="light"].is-disabled.is-checked i{
+    color: rgba(0,0,0,.26);
+}
+.icontoggle[class*="light"].is-disabled.is-checked i:after{
+    background: rgba(0,0,0,.12);
+}
+.icontoggle[class*="light"].is-checked i{
+    color: rgba(255,255,255,.87);
+}
+.icontoggle[class*="light"].is-checked i:after{
+    background: rgba(255,255,255,.87);
+}
+
+/*dark*/
+.icontoggle[class*="dark"]{
+    color: rgba(255,255,255,.87);
+}
+.icontoggle[class*="dark"].is-disabled{
+    color: rgba(255,255,255,.26);
+}
+.icontoggle[class*="dark"].is-disabled.is-checked i:after{
+    background: rgba(255,255,255,.12);
+}
+.icontoggle[class*="dark"].is-checked i:after{
+    background: rgba(0,0,0,.87);
+}
+
+/*green*/
+.icontoggle[class*="green"] i:after{
+    background: rgba(0,125,0,.3);
+}
+.icontoggle[class*="green"].is-checked i:after{
+    background: rgba(0,166,0,1);
+}
+.icontoggle[class*="green"].is-checked:hover i:after{
+    background: rgb(0,126,0);
+}
+/*blue*/
+.icontoggle[class*="blue"] i:after{
+    background: rgba(24, 95, 156,.3);
+}
+.icontoggle[class*="blue"].is-checked i:after{
+    background: rgba(18, 157, 227,1);
+}
+.icontoggle[class*="blue"].is-checked:hover i:after{
+    background: rgb(24, 95, 156);
+}
+/*yellow*/
+.icontoggle[class*="yellow"] i:after{
+    background: rgba(209, 144, 5,.3);
+}
+.icontoggle[class*="yellow"].is-checked i:after{
+    background: rgba(247, 170,6,1);
+}
+.icontoggle[class*="yellow"].is-checked:hover i:after{
+    background: rgb(209, 144, 5);
+}
+
+
+
+/**
+Toggle Button
+=======================
+*/
+.togglebutton_button:hover{
+    background-color:rgba(153,153,153, .2);
+}  
+/*light*/
+.togglebutton[class*="light"] .togglebutton_button{
+    color: rgba(0,0,0,.87);
+}
+.togglebutton[class*="light"] .togglebutton_button.is-disabled{
+    color: rgba(0,0,0,.26) !important;
+    background-color: transparent !important;
+}
+.togglebutton[class*="light"] .togglebutton_button.is-disabled.is-checked{
+    color: rgba(0,0,0,.26) !important;
+    background-color: rgba(0,0,0,.12) !important;
+}
+.togglebutton[class*="light"] .togglebutton_button:active, .togglebutton[class*="light"] .togglebutton_button.is-active{/*ripple*/
+    background-image: radial-gradient(circle, rgba(0,0,0,.1) 10%, rgba(255,255,255,.1) 11%);
+} 
+/*dark*/
+.togglebutton[class*="dark"] .togglebutton_button{
+    color: rgba(255,255,255,.87);
+}
+.togglebutton[class*="dark"] .togglebutton_button.is-disabled{
+    color: rgba(255,255,255,.26) !important;
+    background-color: transparent !important;
+}
+.togglebutton[class*="dark"] .togglebutton_button.is-disabled.is-checked{
+    color: rgba(255,255,255,.26) !important;
+    background-color: rgba(255,255,255,.12) !important;
+}
+.togglebutton[class*="dark"] .togglebutton_button:active, .togglebutton[class*="dark"] .togglebutton_button.is-active{/*ripple*/
+    background-image: radial-gradient(circle, rgba(255,255,255,.1) 10%, rgba(0,0,0,.1) 11%);
+} 
+
+/*green*/
+.togglebutton[class*="green"] .togglebutton_button.is-checked{
+    background-color:rgb(0,166,0);
+    color: rgba(255,255,255,.87);
+}
+.togglebutton[class*="green"] .togglebutton_button.is-checked:hover{
+    background-color:rgb(0,126,0);
+}
+/*blue*/
+.togglebutton[class*="blue"] .togglebutton_button.is-checked{
+    background-color:rgb(18, 157, 227);
+    color: rgba(255,255,255,.87);
+}
+.togglebutton[class*="blue"] .togglebutton_button.is-checked:hover{
+    background-color:rgb(24, 95, 156);
+}
+/*yellow*/
+.togglebutton[class*="yellow"] .togglebutton_button.is-checked{
+    background-color:rgb(247, 170, 6);
+    color: rgba(255,255,255,.87);
+}
+.togglebutton[class*="yellow"] .togglebutton_button.is-checked:hover{
+    background-color:rgb(209, 144, 5);
+}
+
+
+/**
+Dropdown & Selectfield_options
+=======================
+*/
+.dropdown_button:not(:disabled):hover, .dropdown_button:not(.is-disabled):hover, .dropdown_options li:not(.is-disabled):hover,
+.selectfield_options li:not(.is-disabled):hover{
+    background-color: rgba(153,153,153, .2);
+}
+/*light*/
+.dropdown[class*="light"] .dropdown_button{
+    color:rgba(0,0,0,.87); 
+}
+.dropdown[class*="light"] .dropdown_options,
+.selectfield[class*="light"] .selectfield_options{
+    background-color: rgb(255,255,255);
+    color: rgba(0,0,0,.87);
+}
+.dropdown[class*="light"] .dropdown_button:not(:disabled):active, .dropdown[class*="light"] .dropdown_button:not(.is-disabled).is-active,
+.dropdown[class*="light"] .dropdown_options li:active,
+.selectfield[class*="light"] .selectfield_options li:active{
+    background-image: radial-gradient(circle, rgba(0,0,0,.1) 10%, rgba(255,255,255,.1) 11%);
+}
+.dropdown[class*="light"].is-disabled .dropdown_button, .dropdown[class*="light"] .dropdown_button.is-disabled, .dropdown[class*="light"] .dropdown_button:disabled, .dropdown[class*="light"] .dropdown_options li.is-disabled,
+.selectfield[class*="light"] .selectfield_options li.is-disabled{
+    color: rgba(0,0,0,.26) !important;
+    background-color: transparent !important;
+    cursor: default;
+}
+.dropdown[class*="light"] .dropdown_options li.is-disabled.is-active,
+.selectfield[class*="light"] .selectfield_options li.is-disabled.is-active{
+    color: rgba(0,0,0,.26) !important;
+    background-color: rgba(0,0,0,.12) !important;
+}
+/*dark*/
+.dropdown[class*="dark"] .dropdown_button{
+    color:rgba(255,255,255,.87); 
+}
+.dropdown[class*="dark"] .dropdown_options,
+.selectfield[class*="dark"] .selectfield_options{
+    background-color: rgb(51,51,51);
+    color: rgba(255,255,255,.87);
+}
+.dropdown[class*="dark"] .dropdown_button:not(:disabled):active, .dropdown[class*="dark"] .dropdown_button:not(.is-disabled).is-active,
+.dropdown[class*="dark"] .dropdown_options li:active,
+.selectfield[class*="dark"] .selectfield_options li:active{
+    background-image: radial-gradient(circle, rgba(255,255,255,.1) 10%, rgba(0,0,0,.1) 11%);
+}
+.dropdown[class*="dark"].is-disabled .dropdown_button, .dropdown[class*="dark"] .dropdown_button.is-disabled, .dropdown[class*="dark"] .dropdown_button:disabled, .dropdown[class*="dark"] .dropdown_options li.is-disabled,
+.selectfield[class*="dark"] .selectfield_options li.is-disabled{
+    color: rgba(255,255,255,.26) !important;
+    background-color: transparent !important;
+    cursor: default;
+}
+.dropdown[class*="dark"] .dropdown_options li.is-disabled.is-active,
+.selectfield[class*="dark"] .selectfield_options li.is-disabled.is-active{
+    color: rgba(255,255,255,.26) !important;
+    background-color: rgba(255,255,255,.12) !important;
+}
+
+/*green*/
+.dropdown[class*="green"] .dropdown_options li.is-active,
+.selectfield[class*="green"] .selectfield_options li.is-active{
+    color:rgb(0,166,0);
+}
+.dropdown[class*="green"] .dropdown_button:active, .dropdown[class*="green"] .dropdown_button.is-active{
+    color:rgba(0,166,0, .87);
+}
+/*blue*/
+.dropdown[class*="blue"] .dropdown_options li.is-active,
+.selectfield[class*="blue"] .selectfield_options li.is-active{
+    color:rgb(18, 157, 227);
+}
+.dropdown[class*="blue"] .dropdown_button:active, .dropdown[class*="blue"] .dropdown_button.is-active{
+    color:rgba(18,157,227, .87);
+}
+/*yellow*/
+.dropdown[class*="yellow"] .dropdown_options li.is-active,
+.selectfield[class*="yellow"] .selectfield_options li.is-active{
+    color:rgb(247, 170, 6);
+}
+.dropdown[class*="yellow"] .dropdown_button:active, .dropdown[class*="yellow"] .dropdown_button.is-active{
+    color:rgba(247,170,6, .87);
+}
+
+/**
+Textfield & Selectfield
+=======================
+*/
+/*light*/
+.textfield[class*="light"] .textfield_input, .selectfield[class*="light"] .selectfield_input{
+    border-color: rgba(0,0,0,.54);
+    color: rgba(0,0,0,.87);
+}
+.textfield[class*="light"] .textfield_label, .selectfield[class*="light"] .selectfield_label{
+    color: rgba(0,0,0,.54);
+}
+.textfield[class*="light"].is-disabled .textfield_input, .selectfield[class*="light"].is-disabled .selectfield_input{
+    border-color: rgba(0,0,0,.54);
+    color:rgba(0,0,0,.54);
+}
+.textfield[class*="light"].is-disabled .textfield_label, .selectfield[class*="light"].is-disabled .selectfield_label{
+    color:rgba(0,0,0,.54) !important;
+}
+.textfield[class*="light"].is-invalid:after, .selectfield[class*="light"].is-invalid:after{
+    border-color: rgb(213,0,0);
+}
+.textfield[class*="light"].is-invalid .textfield_helper, 
+.selectfield[class*="light"].is-invalid .selectfield_helper, .selectfield[class*="light"].is-invalid .selectfield_input:after{
+    color: rgb(213,0,0) !important;
+}
+.textfield[class*="light"].textfield--floating-label.is-dirty.is-invalid .textfield_label, .textfield[class*="light"].textfield--floating-label.is-focused.is-invalid .textfield_label,
+.selectfield[class*="light"].is-dirty.is-invalid .selectfield_label, .selectfield[class*="light"].is-focused.is-invalid .selectfield_label{
+    color: rgb(213,0,0) !important;
+}
+/*dark*/
+.textfield[class*="dark"] .textfield_input, .selectfield[class*="dark"] .selectfield_input{
+    border-color: rgba(255,255,255,.54);
+    color: rgba(255,255,255,.87);
+}
+.textfield[class*="dark"] .textfield_label, .selectfield[class*="dark"] .selectfield_label{
+    color: rgba(255,255,255,.54);
+}
+.textfield[class*="dark"].is-disabled .textfield_input, .selectfield[class*="dark"].is-disabled .selectfield_input{
+    border-color: rgba(255,255,255,.54);
+    color:rgba(255,255,255,.54);
+}
+.textfield[class*="dark"].is-disabled .textfield_label, .selectfield[class*="dark"].is-disabled .selectfield_label{
+    color:rgba(255,255,255,.54) !important;
+}
+.textfield[class*="dark"].is-invalid:after, .selectfield[class*="dark"].is-invalid:after{
+    border-color: rgb(255,110,110);
+}
+.textfield[class*="dark"].is-invalid .textfield_helper, 
+.selectfield[class*="dark"].is-invalid .selectfield_helper, .selectfield[class*="dark"].is-invalid .selectfield_input:after{
+    color: rgb(255,110,110) !important;
+}
+.textfield[class*="dark"].textfield--floating-label.is-dirty.is-invalid .textfield_label, .textfield[class*="dark"].textfield--floating-label.is-focused.is-invalid .textfield_label,
+.selectfield[class*="dark"].is-dirty.is-invalid .selectfield_label, .selectfield[class*="dark"].is-focused.is-invalid .selectfield_label{
+    color: rgb(255,110,110) !important;
+}
+
+/*green*/
+.textfield[class*="green"]:after, .selectfield[class*="green"]:after{
+    border-color: rgb(0,166,0);
+}
+.textfield[class*="green"].textfield--floating-label.is-focused .textfield_label, 
+.selectfield[class*="green"].is-focused .selectfield_label, .selectfield[class*="green"].is-focused .selectfield_input:after{
+    color: rgb(0,166,0);
+}
+/*blue*/
+.textfield[class*="blue"]:after, .selectfield[class*="blue"]:after{
+    border-color: rgb(18, 157, 227);
+}
+.textfield[class*="blue"].textfield--floating-label.is-focused .textfield_label, 
+.selectfield[class*="blue"].is-focused .selectfield_label, .selectfield[class*="blue"].is-focused .selectfield_input:after{
+    color: rgb(18, 157, 227);
+}
+/*yellow*/
+.textfield[class*="yellow"]:after, .selectfield[class*="yellow"]:after{
+    border-color: rgb(247, 170, 6);
+}
+.textfield[class*="yellow"].textfield--floating-label.is-focused .textfield_label, 
+.selectfield[class*="yellow"].is-focused .selectfield_label, .selectfield[class*="yellow"].is-focused .selectfield_input:after{
+    color: rgb(247, 170, 6);
+}
+
+
+/**
+Tab
+=======================
+*/
+.tab_button:hover{
+    background-color:rgba(153,153,153, .2);
+}  
+/*light*/
+.tab[class*="light"] .tab_button{
+    color: rgba(0,0,0,.87);
+}
+.tab[class*="light"] .tab_button.is-disabled{
+    color: rgba(0,0,0,.26) !important;
+    background-color: transparent !important;
+}
+.tab[class*="light"] .tab_button.is-disabled.is-checked{
+    color: rgba(0,0,0,.26) !important;
+    background-color: rgba(0,0,0,.12) !important;
+}
+.tab[class*="light"] .tab_button:active{
+    background-image: radial-gradient(circle, rgba(0,0,0,.1) 10%, rgba(255,255,255,.1) 11%);
+}
+/*dark*/
+.tab[class*="dark"] .tab_button{
+    color: rgba(255,255,255,.87);
+}
+.tab[class*="dark"] .tab_button.is-disabled{
+    color: rgba(255,255,255,.26) !important;
+    background-color: transparent !important;
+}
+.tab[class*="dark"] .tab_button.is-disabled.is-checked{
+    color: rgba(255,255,255,.26) !important;
+    background-color: rgba(255,255,255,.12) !important;
+}
+.tab[class*="dark"] .tab_button:active{
+    background-image: radial-gradient(circle, rgba(255,255,255,.1) 10%, rgba(0,0,0,.1) 11%);
+}
+/*green*/
+.tab[class*="green"] .tab_button:active, .tab[class*="green"] .tab_button.is-active, .tab[class*="green"] .tab_button.is-checked{
+    color: rgb(0,166,0);
+} 
+.tab[class*="green"] .tab_button:after{
+    border-bottom-color :rgb(0,166,0);
+}  
+/*blue*/
+.tab[class*="blue"] .tab_button:active, .tab[class*="blue"] .tab_button.is-active, .tab[class*="blue"] .tab_button.is-checked{
+    color: rgb(18, 157, 227);
+} 
+.tab[class*="blue"] .tab_button:after{
+    border-bottom-color:rgb(18, 157, 227);
+}  
+
+/*yellow*/
+.tab[class*="yellow"] .tab_button:active, .tab[class*="yellow"] .tab_button.is-active, .tab[class*="yellow"] .tab_button.is-checked{
+    color: rgb(247, 170, 6);
+} 
+.tab[class*="yellow"] .tab_button:after{
+    border-bottom-color :rgb(247, 170, 6);
+}
+
+
+
+/**
+List
+=======================
+*/
+/*white*/
+.list[class*="white"]{
+    background: rgb(255,255,255);
+    color:rgb(0,0,0);
+}
+.list[class*="white"] *{
+    color:rgb(0,0,0);
+}
+.list[class*="white"] .card--divider{
+    border-color: rgba(0,0,0,.54);
+}
+/*light*/
+.list[class*="light"]{
+    background: rgb(238,238,238);
+    color:rgb(0,0,0);
+}
+.list[class*="light"] *{
+    color:rgb(0,0,0);
+}
+.list[class*="light"] .card--divider{
+    border-color: rgba(0,0,0,.54);
+}
+/*dark*/
+.list[class*="dark"]{
+    background: rgb(51,51,51);
+    color:rgb(255,255,255);
+}
+.list[class*="dark"] *{
+    color:rgb(255,255,255);
+}
+.list[class*="dark"] .card--divider{
+    border-color: rgba(255,255,255,.54);
+}
+
+/**
+Table
+=======================
+*/
+/*white*/
+.table[class*="white"] thead th, .table[class*="white"] tbody tr{
+    background: rgba(255,255,255,1);
+}
+.table[class*="white"] thead th:hover:not(.sort--disabled), .table[class*="white"] tbody tr:hover{
+    background: rgba(153,153,5153,.2);
+}
+
+/*green*/
+.table[class*="green"] .row--selected{
+    background: rgba(0,126,0, .3);
+}
+.table[class*="green"] .row--selected:hover{
+    background: rgba(0,126,0, .4);
+}
+
+/*blue*/
+.table[class*="blue"] .row--selected{
+    background: rgba(24, 95, 156, .3);
+}
+.table[class*="blue"] .row--selected:hover{
+    background: rgba(24, 95, 156, .4);
+}
+
+/*yellow*/
+.table[class*="yellow"] .row--selected{
+    background: rgba(209, 144, 5, .3);
+}
+.table[class*="yellow"] .row--selected:hover{
+    background: rgba(209, 144, 5, .4);
+}
+
+/**
+* xsm (xsmall)
+* >= 480px
+*/
+@media screen and (min-width: 30em) {
+}
+/**
+* sm (small)
+* >= 600px
+*/
+@media screen and (min-width: 37.5em) {
+
+}
+/**
+* md (medium)
+* >= 768px
+*/
+@media screen and (min-width: 48em) {
+}
+/**
+* lg (large)
+* >= 1024px
+*/
+@media screen and (min-width: 64em) {
+
+}
+/**
+* xlg (xlg)
+* >= 1280px
+*/
+@media screen and (min-width: 80em) {
+
+}
+/**
+* xxlg (xxlarge)
+* >= 1920px
+*/
+@media screen and (min-width: 120em) {
+}

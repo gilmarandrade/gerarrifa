@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sortear</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script src="js/randomico.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+        <style>
+            @keyframes animation-out {
+
+                0%{ 
+                    background: black;
+                    color: white;
+                }
+                100%{
+                    background: rgb(247, 170,6);
+                    color:white;
+                }
+            }
+
+            .display{
+                margin:30px 0;
+            }
+            .digit .title-display{
+                font-size: 50px;
+                line-height: 60px;
+                text-transform: uppercase;
+            }
+
+            .animation-out .digit .card_box{
+                animation-direction: alternate;
+                animation-name: animation-out;
+                animation-duration: 1s;
+                animation-iteration-count: 5;
+                animation-fill-mode: forwards;
+            }
+            .digit-out.digit .card_box{
+                background: black;
+                color:white;
+            }
+
+            #btSortear {
+                height:60px;
+                padding: 0 30px;
+                line-height: 60px;
+                font-size: 30px;
+                opacity:1;
+            }
+            #btSortear i{
+                line-height: 60px;
+                font-size: 30px;
+            }
+           
+            #winner{
+                opacity: 0;
+                transition: opacity 1s ease;
+            }
+            
+            .animation-out #winner{
+                opacity:1;
+            }
+            /**
+            * sm (small)
+            * >= 600px
+            */
+            @media screen and (min-width: 37.5em) {
+                .digit .title-display{
+                    font-size: 60px;
+                    line-height: 100px;
+                }
+            }
+
+            /**
+            * md (medium)
+            * >= 768px
+            */
+            @media screen and (min-width: 48em) {
+                .digit .title-display{
+                    font-size: 100px;
+                    line-height: 150px;
+                }
+            }
+
+            /**
+            * lg (large)
+            * >= 1024px
+            */
+            @media screen and (min-width: 64em) {
+                .digit .title-display{
+                    font-size: 120px;
+                    line-height: 200px;
+                }
+            }
+
+            /**
+            * xlg (xlg)
+            * >= 1280px
+            */
+            @media screen and (min-width: 80em) {
+                .digit .title-display{
+                    font-size: 150px;
+                    line-height: 250px;
+                }
+            }
+        </style>
+    </head>
+
+    <body style="background: rgb(51,51,51);" class="align--center">
+        <div class="align--left">
+            <a class="button button--flat dark" href="gerente-sorteio.html"><i class="fa fa-arrow-left"></i> voltar</a>
+        </div>
+        <section class="display dark-theme align--center grid-u-11-12 grid-u-sm-10-12 grid-u-md-10-12 grid-u-lg-10-12">
+            <div class="grid-g">
+                <div id="digit1" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span  class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+                <div id="digit2" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span   class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+                <div  id="digit3" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span  class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+                <div id="digit4" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span   class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+                <div id="digit5" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span   class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+                <div  id="digit6" class="card digit grid-u-2-12">
+                    <div class="card_margin">
+                        <div class="card_box white-theme">
+                            <div class="card_row align--center"><span  class="title-display"></span></div> 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid-g">
+                <div class="card grid-u-1">
+                    <div class="card_box">
+                        <div class="card_row card_row--large dark-theme">
+                            <button id="btSortear" class="button button--raised-primary green-dark" onclick="realizarSorteio()"><i class="fa fa-gift"></i> sortear</button>
+                        </div> 
+                        <div id="winner">
+                            <div class="card_row dark-theme">
+                                <span class="title-display">Maria Silveira</span>
+                            </div> 
+                            <div class="card_row card_row--inline-controls dark-theme">
+
+                                <span class="body--bold">vendido por </span>
+                                <span class="avatar avatar--one-line dark-theme" >
+                                    <img alt="imagem" src="img/user23.jpg"/>
+                                    <span class="title-display">Jonh Connor</span>
+                                </span>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section> 
+
+
+    </body>
+</html>

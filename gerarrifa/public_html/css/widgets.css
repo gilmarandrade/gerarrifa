@@ -1,0 +1,1304 @@
+/**
+ * CSS dos elementos: 
+ * -Avatar
+ * -Checkbox
+ * -Radiobutton
+ * -Switch
+ * -Button
+ * -Icontoggle
+ * -Togglebuton
+ * -Dropdown
+ * -Textfield
+ * -Tab
+ * -List & Nav-list
+ * -Table
+ */
+
+
+/* Avatar
+  ==================================================================== */
+.avatar{
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    //overflow: hidden;
+    text-align: left;
+    min-width: 50px;
+}
+.avatar img{
+    width: 36px;
+    height: 36px; 
+    margin: 6px 7px;
+    border-radius: 50%;
+    position: absolute;
+
+}
+.avatar.avatar--one-line span{
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 48px;
+    white-space: nowrap;
+    display: inline;
+    margin-left: 50px;
+}
+
+.avatar .text--two-line {
+    background: cyan;
+    line-height: 48px;
+    width: auto;
+    height: 48px;
+    position: relative;
+    margin-left: 50px;
+    margin-top:-19px;
+}
+.avatar .text--two-line :first-child{
+    margin-top: 20px;
+}
+/*
+.avatar.avatar--two-line span:first-of-type{
+    font-family: "Open Sans SemiBold";
+    font-size: 16px;
+    line-height: 18px;
+    display: inline;
+    margin-top: 6px;
+    white-space: nowrap;
+}
+.avatar.avatar--two-line span:nth-of-type(2){
+    font-family: "Open Sans Light";
+    font-size: 16px;
+    line-height: 18px;
+    display: inline;
+    white-space: nowrap;
+}*/
+
+
+
+
+/* Checkbox
+  ==================================================================== */
+
+.checkbox{
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    //overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    min-width: 50px;
+}
+.checkbox_input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+}
+.checkbox_label{
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 48px;
+    //float:left;
+    margin-left: 50px;
+}
+.checkbox_box-outline{
+    //float:left;
+    border-width: 2px;
+    border-style: solid;
+    margin-top:14px;
+    margin-left: 16px;
+    margin-right: 16px;
+    //display: inline-block;
+    display: inline;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    border-radius: 2px;
+    // position: relative;
+    position: absolute;
+    transition: border .3s cubic-bezier(.4,0,.2,1);
+}
+.checkbox_tick-outline{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    transition: background .3s cubic-bezier(.4,0,.2,1);
+}
+.is-checked .checkbox_tick-outline::after{
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 16px;
+    top: 0;
+    left:0;
+    position: absolute;
+    font-weight: normal;
+    line-height: normal;
+}
+.checkbox.is-disabled{
+    opacity: .26;
+    cursor: default;
+}
+.checkbox:before{
+    content: "";
+    position: absolute;
+    left:0;
+    margin-top:6px;
+    margin-left: 7px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transform: scale(.5);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.checkbox:hover:not(.is-disabled):before{
+    transform: scale(1);
+    opacity: 1; 
+}
+
+/* Radiobutton
+  ==================================================================== */
+.radiobutton{
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    //overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    min-width: 50px;
+}
+.radiobutton_input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity:0;
+}
+.radiobutton_label{
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 48px;
+    //float:left;
+    margin-left: 50px;
+}
+.radiobutton_box-outline{
+    float:left;
+    border-width: 2px;
+    border-style: solid;
+    margin-top:14px;
+    margin-left: 16px;
+    margin-right: 16px;
+    //display: inline-block;
+    display: inline;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    border-radius: 50%;
+    //position: relative;
+    position: absolute;
+    transition: border .3s cubic-bezier(.4,0,.2,1);
+}
+.radiobutton_tick-outline{
+    position: absolute;
+    top:2px;
+    left:2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+    transform: scale(0);
+}
+.is-checked .radiobutton_tick-outline{
+    transform: scale(1);
+}
+.radiobutton.is-disabled{
+    opacity: .26;
+    cursor: default;
+}
+
+.radiobutton:before{
+    content: "";
+    position: absolute;
+    left:0;
+    margin-top:6px;
+    margin-left: 7px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transform: scale(.5);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.radiobutton:hover:not(.is-disabled):before{
+    transform: scale(1);
+    opacity: 1; 
+}
+
+
+/* Switch
+  ==================================================================== */
+
+.switch{
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    //overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    min-width: 50px;
+}
+.switch_input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity:0;
+}
+.switch_label{
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 48px;
+    //float:left;
+    margin-left: 50px;
+}
+.switch_box-outline{
+    //float:left;
+    border-width: 2px;
+    border-style: solid;
+    background: transparent;
+    margin-top:14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    //display: inline-block;
+    display: inline;
+    box-sizing: border-box;
+    width: 30px;
+    height: 18px;
+    /*overflow: hidden;*/
+    border-radius: 10px;
+    position: absolute;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.switch_tick-outline{
+    position: absolute;
+    top:2px;
+    left:2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+
+.is-checked .switch_tick-outline{
+    left:14px;
+}
+.switch.is-disabled{
+    opacity: .26;
+    cursor: default;
+}
+
+
+.switch .switch_tick-outline:before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    margin-top:-13px;
+    margin-left: -13px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transform: scale(.5);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.switch:hover:not(.is-disabled) .switch_tick-outline:before{
+    transform: scale(1);
+    opacity: 1; 
+}
+
+
+
+
+/* Button
+  ==================================================================== */
+.button{
+    font-family: "Open Sans SemiBold";
+    font-size:14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height:36px;
+    border:none;
+    display:inline-block;
+    padding:0 16px;
+    border-radius: 4px;
+    background-color:transparent;
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1), .4s background-size ease;
+    pointer-events: auto;
+    overflow: hidden;
+}
+
+.button--raised-primary, .button--raised-secondary{
+    box-shadow:  0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.button--raised-primary:active, .button--raised-secondary:active, .button--raised-primary.is-active, .button--raised-secondary.is-active{
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
+.button:active, .button.is-active{/*efeito ripple*/
+    background-size: 1000%;
+}
+.button i{
+    font-size:18px;
+    line-height: 36px;
+}
+.button--only-icon{
+    padding:0;
+    width:36px;
+    text-align: center;
+    background-size: 500%;
+}
+.button.button--only-icon:active, .button.button--only-icon.is-active{/*efeito ripple*/
+    background-size: 1500%;
+}
+.button--only-icon i{
+    font-size:22px;
+    padding:0;
+    width:36px;
+    text-align: center;
+}
+.button:disabled, .button.is-disabled{
+    pointer-events: none;
+}
+
+@keyframes top-button-animation {
+    0% {
+        opacity: 0;
+    }
+    50%{ 
+        opacity: 1;
+    }
+    100%{
+        opacity: .5;
+    }
+}
+#top-button{
+    position: fixed;
+    z-index: 2;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    opacity: 0;
+    width:46px;
+    height:45px;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+/**
+* md (medium)
+* >= 768px
+*/
+@media screen and (min-width: 48em) {
+    #top-button{
+        right: 30px;
+        bottom: 30px;
+    }
+}
+#top-button.top-button--visible:hover{
+    opacity: 1;   
+}
+#top-button.top-button--visible{
+    opacity: .5;
+    animation: top-button-animation 1s ease-in-out;
+    pointer-events: auto;
+}
+
+
+/* Icon Toggle
+  ==================================================================== */
+.icontoggle{
+    font-family: "Open Sans SemiBold";
+    font-size:14px;
+    line-height:36px;
+    border:none;
+    display:inline-block;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    height: 48px;
+}
+.icontoggle_input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+}
+.icontoggle i{
+    position: relative;
+    font-size:20px;
+    width:36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 6px 7px;
+}
+.icontoggle i:after{
+    content: " ";
+    position: absolute;
+    left:0;
+    top:0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transform: scale(.5);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+    z-index: -1;
+}
+.icontoggle:hover:not(.is-disabled) i:after{
+    transform: scale(1);
+    opacity: 1; 
+}
+.icontoggle.is-disabled{
+    //opacity: .26;
+    pointer-events: none;
+}
+.icontoggle.is-checked i:after{
+    pointer-events: none;
+    transform: scale(1);
+    opacity: 1; 
+}
+.icontoggle:not(.is-checked) .icontoggle_label-unchecked, .icontoggle.is-checked .icontoggle_label-checked{
+    display:inline;
+}
+.icontoggle.is-checked .icontoggle_label-unchecked, .icontoggle:not(.is-checked) .icontoggle_label-checked{
+    display:none;
+}
+
+/* Icon
+  ==================================================================== */
+.icon{
+    font-family: "Open Sans SemiBold";
+    font-size:14px;
+    line-height:36px;
+    border:none;
+    display:inline-block;
+    padding: 0;
+    position: relative;
+    height: 48px;
+}
+.icon i{
+    position: relative;
+    font-size:20px;
+    width:36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 6px 7px;
+}
+
+/* Toggle Button
+  ==================================================================== */
+.togglebutton{
+    position: relative;
+    display: inline-block;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1);
+    box-shadow:  0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+.togglebutton_radio-input, .togglebutton_checkbox-input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+}
+.togglebutton .togglebutton_button{
+    font-family: "Open Sans SemiBold";
+    font-size:14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height:36px;
+    border:none;
+    display:inline-block;
+    padding:0 16px;
+    pointer-events: auto;   
+    cursor:pointer;
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1), .4s background-size ease;
+    position: relative;
+    top: -7px;
+}
+.togglebutton .togglebutton_button:active, .togglebutton .togglebutton_button.is-active{/*efeito ripple*/
+    background-size: 1000%;
+} 
+.togglebutton .togglebutton_button:not(:first-child){
+    margin-left: -5px;
+}
+.togglebutton .togglebutton_button:first-child{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.togglebutton .togglebutton_button:last-child{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.togglebutton_label{
+    display: block;
+    height: 36px;
+}
+.togglebutton_button i{
+    font-size:18px;
+
+    //display: inline-block;
+}
+.togglebutton_button:disabled, .togglebutton_button.is-disabled{
+    pointer-events: none;
+}
+
+
+/* Dropdown
+  ==================================================================== */
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button{
+    position: relative;
+    font-family: "Open Sans";
+    font-size:14px;
+    height:100%;
+    border:none;
+    display:inline-block;
+    padding:0 24px 0 16px;
+    background:transparent;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1), .4s background-size ease;
+    pointer-events: auto;
+    overflow: hidden;
+    min-width: 60px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.dropdown_button:after{
+    content: "\f0d7";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 8px;
+}
+.dropdown_button:not(:disabled):active{
+    background-size: 1000%;
+}
+.dropdown_options{
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    min-width: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 30;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    transition: transform .3s cubic-bezier(.4,0,.2,1) .3s, opacity .2s cubic-bezier(.4,0,.2,1) .3s, margin .01s linear .8s;
+    opacity: 0;
+    transform: scale(0.5);
+    margin-top: -1000px;
+}
+.dropdown_button:not(.is-disabled):focus + .dropdown_options, .dropdown_button:not(:disabled):focus + .dropdown_options{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: transform .3s cubic-bezier(.4,0,.2,1) .2s,opacity .2s cubic-bezier(.4,0,.2,1) .2s, margin .01s linear;
+    margin-top: 0px;
+}
+.dropdown_button:not(.is-disabled):focus + .dropdown_options--top-left ,  .dropdown_button:not(:disabled):focus + .dropdown_options--top-left,
+.dropdown_button:not(.is-disabled):focus + .dropdown_options--bottom-left ,  .dropdown_button:not(:disabled):focus + .dropdown_options--bottom-left{
+    margin-left:0px;
+}
+.dropdown_button:not(.is-disabled):focus + .dropdown_options--top-right ,  .dropdown_button:not(:disabled):focus + .dropdown_options--top-right,
+.dropdown_button:not(.is-disabled):focus + .dropdown_options--bottom-right ,  .dropdown_button:not(:disabled):focus + .dropdown_options--bottom-right{
+    margin-right:0px;
+}
+.dropdown_options.dropdown_options--top-left{
+    top:0;
+    left:0;
+    margin-left:-3000px;
+}
+.dropdown_options.dropdown_options--top-right{
+    top:0;
+    right:0;
+    margin-right:-3000px;
+}
+.dropdown_options.dropdown_options--bottom-left{
+    bottom:0;
+    left:0;
+    margin-left:-3000px;
+}
+.dropdown_options.dropdown_options--bottom-right{
+    bottom:0;
+    right:0;
+    margin-right:-3000px;
+}
+.dropdown_options li{
+    line-height: 48px;
+    cursor: pointer;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
+    transition: .4s background-size ease;
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    text-align: left;
+}
+.dropdown_options li:active{
+    background-size: 1000%;
+}
+.dropdown_options li:not(.is-disabled){
+    pointer-events: auto;
+}
+.dropdown_options li.is-disabled{
+    pointer-events: none;
+}
+td .dropdown, th .dropdown{
+    height: 100%;
+}
+
+/* Textfield
+  ==================================================================== */
+.textfield, .selectfield{
+    min-height: 72px; 
+    position: relative;
+    max-width: 100%;
+    min-width: 60px;
+    display: inline-block;
+}
+.textfield:after, .selectfield:after{
+    content:"";
+    width: 0%;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    position: absolute;
+    left:45%;
+    bottom: 21px;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+}
+.textfield.is-focused:after, .textfield.is-invalid:after, .selectfield.is-focused:after, .selectfield.is-invalid:after{
+    width: calc(100% - 16px);
+    left:16px;
+}
+.textfield_input{
+    margin: 21px 0 21px 16px;
+    padding: 0;
+    border:0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    min-height: 29px;
+    font-size: 16px;
+    font-family: "Open Sans";
+    text-align: left;
+    width: calc(100% - 16px);
+    background: transparent;
+    resize: vertical;
+    position: relative;
+    outline:none;
+    box-shadow: none;
+}
+.textfield.textfield--static .textfield_input{
+    border-bottom-width: 0px;
+}
+.textfield.textfield--primary .textfield_input{
+    font-family: "Static Bold";
+    font-size: 22px;
+}
+
+.textfield_label, .selectfield_label{
+    position: absolute;
+    left:16px;
+    right: 0px;
+    top:21px;
+    font-size: 16px;
+    font-family: "Open Sans";
+    line-height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    pointer-events: auto;
+    opacity: 1;
+    transition: top .2s cubic-bezier(.4,0,.2,1);
+    cursor: text;
+}
+.textfield.is-dirty .textfield_label{
+    opacity: 0;
+    pointer-events: none;
+}
+.textfield.textfield--floating-label.is-dirty .textfield_label, .textfield--floating-label.is-focused .textfield_label,
+.selectfield.is-dirty .selectfield_label, .selectfiel.is-focused .selectfield_label {
+    top:0;
+    opacity: 1;
+    pointer-events: none;
+    font-family: "Open Sans Semibold";
+    font-size: 12px;
+    line-height: 21px;
+}
+.textfield.textfield--static .textfield_label{
+    top:0;
+    opacity: 1;
+    font-family: "Open Sans Semibold";
+    font-size: 12px;
+    line-height: 21px; 
+}
+.textfield.is-required .textfield_label:after,
+.selectfield.is-required .selectfield_label:after{
+    content:"*";
+}
+.textfield_helper, .selectfield_helper{
+    position: absolute;
+    bottom:0;
+    left:16px;
+    font-family: "Open Sans Semibold";
+    font-size: 12px;
+    line-height: 21px;
+    display: none;
+}
+.textfield.is-invalid .textfield_input{
+    box-shadow: none;
+}
+.textfield.is-invalid .textfield_helper, .selectfield.is-invalid .selectfield_helper{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.textfield.is-disabled .textfield_input, .selectfield.is-disabled .selectfield_input{
+    border-style: dashed;
+    cursor: not-allowed;
+}
+.textfield.is-disabled .textfield_label, .selectfield.is-disabled .selectfield_label{
+    cursor: not-allowed;
+}
+
+.selectfield_label{
+    cursor: pointer;
+}
+.selectfield_input{
+    margin: 21px 0 21px 16px;
+    padding: 0;
+    padding-right: 24px;
+    border:0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    min-height: 29px;
+    font-size: 16px;
+    font-family: "Open Sans";
+    text-align: left;
+    width: calc(100% - 16px);
+    background: transparent;
+    resize: vertical;
+    position: relative;
+
+
+    display:inline-block;
+    pointer-events: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.selectfield_input:after{
+    content: "\f0d7";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 8px;
+    top:0;
+    line-height: 30px;
+}
+.selectfield.is-focused .selectfield_input:after{
+    transform: rotate(180deg);
+}
+
+
+.selectfield_options{
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    width: calc(100% - 16px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    transition: transform .3s cubic-bezier(.4,0,.2,1) .3s, opacity .2s cubic-bezier(.4,0,.2,1) .3s, margin .01s linear .8s;
+    opacity: 0;
+    transform: scale(0.5);
+
+    top:52px;
+    left:16px;
+    margin-left:-3000px;
+    margin-top:-3000px;
+}
+
+.selectfield_input:not(.is-disabled):focus + .selectfield_options, .selectfield_input:not(:disabled):focus + .selectfield_options{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: transform .3s cubic-bezier(.4,0,.2,1) .2s,opacity .2s cubic-bezier(.4,0,.2,1) .2s, margin .01s linear;
+    margin-left:0px;
+    margin-top:0;
+}
+.selectfield_options li{
+    line-height: 48px;
+    cursor: pointer;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
+
+    transition: .4s background-size ease;
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    text-align: left;
+}
+.selectfield_options li:active{
+    background-size: 1000%;
+}
+.selectfield_options li:not(.is-disabled){
+    pointer-events: auto;
+}
+.selectfield_options li.is-disabled{
+    pointer-events: none;
+}
+
+/* Tab
+  ==================================================================== */
+.tab{
+    position: relative;
+    display: inline-block;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1);
+}
+.tab_input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border:none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+}
+.tab .tab_button{
+    font-family: "Open Sans SemiBold";
+    font-size:14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height:36px;
+    border:none;
+    display:inline-block;
+    padding:0 16px;
+    pointer-events: auto;   
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1), .4s background-size ease;
+    cursor:pointer;
+    position: relative;
+
+    background-image:none;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.tab .tab_button:active{
+    background-size: 1000%;
+}
+.tab_button:after{
+    content:"";
+    width: 0%;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    position: absolute;
+    left:45%;
+    bottom: 0px;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+}
+.tab_button.is-checked:after{
+    width:100%;
+    left:0px;
+}
+.tab .tab_button:not(:first-child){
+    margin-left: -5px;
+}
+
+.tab_button i{
+    font-size:18px;
+    line-height: 36px;
+}
+.tab_button:disabled, .tab_button.is-disabled{
+    pointer-events: none;
+}
+.tab_container{
+    display: none;
+    word-spacing: normal;
+}
+.tab_container.is-active{
+    display: block;
+}
+
+
+
+/* List & Nav-list
+  ==================================================================== */
+.list, .nav-list{
+    word-spacing: normal;
+    list-style: none;
+    padding:0;
+    text-align: left;
+}
+.list_item{
+    position:relative;
+    padding-left: 0px;
+    padding-right: 16px;
+}
+.nav-list_item.logo a{
+    height: 56px;
+    width:calc(100% - 32px);
+    background-image: url('../img/logo.png');
+    display: block;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: left center;
+    background-size: contain;
+}
+.nav-list_item a{
+    width:calc(100% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.list--secondary-content .list_item{
+    padding-right: 0px; 
+}
+.list--two-line .list_item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.list--secondary-content .list_item [class*="body"], .list--secondary-content .list_item [class*="caption"], .list--secondary-content .list_item [class*="text"]  {
+    width: calc(100% - 70px);
+}
+.list--secondary-content .list_item > :first-child:not(.subtitle){
+    float:left; 
+}
+.list--secondary-content .list_item > :not(.subtitle){
+    float: none;
+}
+.list--secondary-content .list_item > *{
+    margin-top:0;
+    margin-bottom: 0;
+}
+.list--secondary-content .list_item .button{
+    margin: 6px 8px 6px 16px;
+}
+.text--two-line{
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+}
+.text--two-line span:first-child{
+    font-family: "Open Sans SemiBold";
+    font-size: 16px;
+    line-height: 18px;
+    display: block;
+    margin-top: 6px;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: .87;
+}
+.text--two-line span:last-child{
+    font-family: "Open Sans Light";
+    font-size: 16px;
+    line-height: 18px;
+    display: block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: .87;
+}
+
+.body--light{
+    font-family: "Open Sans Light";
+    font-size: 16px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .87;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.body{
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .87;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.body--semibold{
+    font-family: "Open Sans SemiBold";
+    font-size: 16px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .87;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.body--bold{
+    font-family: "Open Sans Bold";
+    font-size: 16px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .87;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.caption{
+    font-family: "Open Sans Semibold";
+    font-size: 12px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .54;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.caption--upper{
+    font-family: "Open Sans Light";
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .54;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.caption--bold{
+    font-family: "Open Sans ExtraBold";
+    font-size: 12px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .54;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.list_caption{
+    position:absolute;
+    top:0;
+    right:8px;
+    text-align: right;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+
+    font-family: "Open Sans Light";
+    font-size: 12px;
+    opacity: .54;
+}
+.subtitle{
+    font-family: "Open Sans Light";
+    font-size: 20px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: .54;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+.nav-list_item .subtitle{
+    padding-left: 16px;
+    padding-right: 16px;
+    width: calc(100% - 32px);
+}
+
+
+
+/* Table
+  ==================================================================== */
+.table{
+    word-spacing: normal;
+    min-width: 100%;
+}
+.table thead{
+    height:56px;
+}
+.table tbody{
+}
+.table tfoot{
+}
+.table tr{
+    border-top:1px solid rgba(0,0,0,.26);
+    border-bottom:1px solid rgba(0,0,0,.26);
+}
+
+.table thead th{
+    cursor:pointer;
+}
+.table thead th, .table tfoot th{
+    font-family: "Open Sans SemiBold";
+    font-size: 12px;
+    color:rgba(0,0,0,.54);
+    text-align: right;
+    padding: 0 16px;
+    text-transform: uppercase;
+    pointer-events: true;
+}
+thead th:before{
+    font-family: "FontAwesome";
+    font-size: 16px;
+    position: relative;
+    left:0px;
+}
+thead th.sort--asc, thead th.sort--des{
+    color:rgba(0,0,0,.87);
+}
+thead th.sort--disabled{
+    cursor:default;
+}
+thead th.sort--asc:before{
+    content:"\f062";
+    font-family: "FontAwesome";
+    font-size: 16px;
+    position: relative;
+    left:0px;
+}
+thead th.sort--des:before{
+    content:"\f063";
+    font-family: "FontAwesome";
+    font-size: 16px;
+    position: relative;
+    left:0px;
+}
+.table td{
+    height: 48px;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: normal;
+    color:rgba(0,0,0,.87);
+    text-align: right;
+    padding: 0 16px;
+}
+.table tfoot td, table .table_cell--header{
+    font-family: "Open Sans SemiBold";
+}
+th.table_cell--non-numeric, td.table_cell--non-numeric{
+    text-align: left !important;
+}
+
+.table--row-selection tr td:first-child,
+.table--row-selection tr th:first-child{
+    width: 50px;
+}
+/**
+* xsm (xsmall)
+* >= 480px
+*/
+@media screen and (min-width: 30em) {
+}
+/**
+* sm (small)
+* >= 600px
+*/
+@media screen and (min-width: 37.5em) {
+
+}
+/**
+* md (medium)
+* >= 768px
+*/
+@media screen and (min-width: 48em) {
+}
+/**
+* lg (large)
+* >= 1024px
+*/
+@media screen and (min-width: 64em) {
+
+}
+/**
+* xlg (xlg)
+* >= 1280px
+*/
+@media screen and (min-width: 80em) {
+
+}
+/**
+* xxlg (xxlarge)
+* >= 1920px
+*/
+@media screen and (min-width: 120em) {
+}

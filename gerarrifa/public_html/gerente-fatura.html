@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Fatura</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon yellow-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="yellow-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Fatura</span></header>
+
+                <section class="light-theme align--center">
+
+                    <div class="card grid-u-1 grid-u-md-10-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--inline-controls card_row--large white-theme">
+
+                                    <span class="header_title">Fatura (Parcial)</span>
+
+                                </div>
+                                <div class="card_row grid-g">
+                                    <div class="textfield textfield--static light grid-u-3-12">
+                                        <span class="textfield_label">Pacote</span>
+                                        <div class="textfield_input">Basic</div>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--table">
+                                    <table class="table white-theme">
+                                        <thead>
+                                            <tr>
+                                                <th class="table_cell--non-numeric sort--disabled"></th>
+                                                <th class="sort--disabled">Usado</th>
+                                                <th class="sort--disabled">Pacote</th>
+                                                <th class="sort--disabled">Excedente</th>
+                                                <th class="sort--disabled">Taxa Unitária Excedente (R$)</th>
+                                                <th class="sort--disabled">Total (R$)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Dias de Arrecadação</td>
+                                                <td>35</td>
+                                                <td>90</td>
+                                                <td>0</td>
+                                                <td>R$ 0,75</td>
+                                                <td class="table_cell--header">R$ 0,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade de Vendedores</td>
+                                                <td>56</td>
+                                                <td>50</td>
+                                                <td>6</td>
+                                                <td>R$ 1,50</td>
+                                                <td class="table_cell--header">R$ 9,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade de Bilhetes</td>
+                                                <td>1043</td>
+                                                <td>800</td>
+                                                <td>243</td>
+                                                <td>7% de R$ 1,00 (R$ 0,07)</td>
+                                                <td class="table_cell--header">R$ 17,01</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Preço Fixo</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="table_cell--header">R$ 50,00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th class="table_cell--non-numeric">total</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>R$ 76,01</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                                <div class="card_row card_row--large align--right">
+                                    <button class="button button--raised-primary green-light"><i class="fa fa-paypal"></i> Efetuar Pagamento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="yellow-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="gerente-dashboard.html" class="body"><i class="fa fa-angle-left"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-list_item ">
+                        <span class="subtitle">Sorteio</span>
+                    </li>
+
+                    <li class="nav-list_item">
+                        <a href="gerente-sorteio.html" class="body--semibold">Visão Geral</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="gerente-atividade.html" class="body--semibold">Atividade</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="gerente-equipe.html" class="body--semibold">Equipe</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="gerente-bilhetes.html" class="body--semibold">Bilhetes</a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="gerente-fatura.html" class="body--semibold">Fatura</a>
+                    </li>
+
+                    <li class="nav-list_item">
+                        <a href="chat.html" class="body--semibold">Chat</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+/**
+ * Panels
+ * -Main
+ * -Header
+ * -Nav
+ * -Aside
+ */
+
+
+/* Nav
+  ==================================================================== */
+
+#nav{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:-100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 91.6667%;/* 11/12 */
+    *width: 91.6357%;
+    transition: left .8s ease;
+    z-index: 4;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+    
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.nav--opened #nav{
+    left:0;
+}
+#nav_curtain{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    background: rgba(0,0,0,.8);
+}
+.nav--closed #nav_curtain{
+    left:-100%;
+    opacity: 0;
+    transition: left .01s .5s, opacity .5s ease;
+}
+.nav--opened #nav_curtain{
+    left:0%;
+    opacity: 1;
+    transition: left .01s 0s, opacity .5s ease;
+}
+
+
+/* Main
+  ==================================================================== */
+
+#main{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    margin-left:0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;/* 12/12 */
+    transition: none;
+    margin-top: 56px;
+    
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+/* Header
+  ==================================================================== */
+main > header{
+    position: fixed;
+    top:0;
+    height: 56px;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+main > header #nav_button{
+    height: 100%;
+    font-size: 20px;
+    float:left;
+    border-radius: 0%;
+}
+main > header #nav_button i{
+    font-size: 25px;
+}
+main > header .header_title{
+    font-family: "Open Sans SemiBold";
+    font-size: 24px;
+    line-height: 56px;
+    white-space: nowrap;
+    opacity: .87;
+    text-overflow: ellipsis;
+    max-width: calc( 100% - 100px);
+    overflow: hidden;
+    display:block;
+    float: left;
+    padding-left: 16px;
+}
+
+/* Aside
+  ==================================================================== */
+#aside{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right:-100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;/* 12/12 */
+    background: #bdc3c7;
+    transition: right .8s ease;
+    
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.aside--opened #aside{
+    right:0;
+}
+
+/**
+* xsm (xsmall)
+* >= 480px
+*/
+@media screen and (min-width: 30em) {
+}
+/**
+* sm (small)
+* >= 600px
+*/
+@media screen and (min-width: 37.5em) {
+    #nav{
+        width: 41.6667%;/* 5/12 */
+        *width: 41.6357%;
+    }
+    .aside--opened #main{
+        width: 58.3333%;/* 7/12*/
+        *width: 58.3023%;
+        margin-right: 41.6667%;/* 5/12 */
+        *margin-right: 41.6357%;
+    }
+    #aside{
+        width: 41.6667%;/* 5/12 */
+        *width: 41.6357%;
+        transition: none;
+    }
+    
+}
+/**
+* md (medium)
+* >= 768px
+*/
+@media screen and (min-width: 48em) {
+}
+/**
+* lg (large)
+* >= 1024px
+*/
+@media screen and (min-width: 64em) {
+    #nav{
+        width: 25%;/* 3/12 */
+        *width: 24.9690%;
+    }
+}
+/**
+* xlg (xlg)
+* >= 1280px
+*/
+@media screen and (min-width: 80em) {
+    #nav{ 
+        left:0;
+        width: 16.6667%;/* 2/12*/
+        *width: 16.6357%;
+        transition: none;
+    }
+    #nav_curtain{
+        display: none;
+    }
+    #main{
+        width: 83.3333%;/* 10/12 */
+        *width: 83.3023%;
+        margin-left: 16.6667%;/* 2/12*/
+        *margin-left: 16.6357%;
+    }
+    .aside--opened #main{
+        width: 50%; /* 6/12 */
+        *width: 49.9690%;
+    }
+    #aside{
+        width: 33.3333%;/* 4/12 */
+        *width: 33.3023%;
+    }
+    #nav_button{
+        display: none;
+    }
+    main > header{
+        width: calc( 100% - 16.6667%);
+    }
+}
+/**
+* xxlg (xxlarge)
+* >= 1920px
+*/
+@media screen and (min-width: 120em) {
+}

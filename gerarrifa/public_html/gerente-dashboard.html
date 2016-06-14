@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sorteios</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!--google chart-->
+        <script type="text/javascript">
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load("current", {packages: ["corechart", "bar", "line"]});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart1);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart1() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Progresso', 'R$'],
+                    ['Arrecadação', 110],
+                    ['Falta', 20]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none',
+                    slices: {
+                        1: {color: '#999999'}
+                    }
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv1'));
+                chart.draw(data, options);
+            }
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart2);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart2() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Progresso', 'R$'],
+                    ['Arrecadação', 30],
+                    ['Falta', 200]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none',
+                    slices: {
+                        0: {color: '#dd0000'},
+                        1: {color: '#999999'}
+
+                    }
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv2'));
+                chart.draw(data, options);
+            }
+
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart3);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart3() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Progresso', 'R$'],
+                    ['Arrecadação', 1000],
+                    ['Falta', 0]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none',
+                    slices: {
+                        0: {color: '#77dd00'},
+                        1: {color: '#999999'}
+
+                    }
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv3'));
+                chart.draw(data, options);
+            }
+
+
+            // Fix responsive design bug
+            $(window).resize(function() {
+                setTimeout(drawDonutChart1, 500);
+                setTimeout(drawDonutChart2, 500);
+                setTimeout(drawDonutChart3, 500);
+            });
+        </script>
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon yellow-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="yellow-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Sorteios</span></header>
+
+                <section class="light-theme">
+                    <header>
+                        <h1>Em Arrecadação</h1>
+                        <a href="gerente-adicionarSorteio-etapa1.html" class="button button--raised-primary yellow-light"><i class="fa fa-plus"></i> novo</a>                          
+                    </header>
+              
+                    <div class="card grid-u-1 grid-u-sm-1-2 grid-u-md-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Rifa Universitária VI</span>
+                                    <span class="caption--bold">23/06/2016 10h30</span>
+                                </div>
+                                <div id="donutChartDiv2" class="card_row card_row--chart" style="min-height:270px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label">Arrecadação</span>
+                                        <div class="textfield_input">R$ 17,00</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label"></span>
+                                        <div class="textfield_input">13%</div>
+                                    </div>
+                                </div>  
+                                <div class="card_row align--right">
+                                    <a href="gerente-sorteio.html" class="button button--raised-primary blue-light"><i class="fa fa-sliders"></i> gerenciar</a>                          
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+   
+                </section>
+                <section class="light-theme">
+                    <header class="">
+                        <h1>Finalizados</h1>
+                    </header>
+                    <div class="card grid-u-1 grid-u-sm-1-2 grid-u-md-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Sorteio Legal</span>
+                                    <span class="caption--bold">23/06/2016 10h30</span>
+                                </div>
+                                <div id="donutChartDiv1" class="card_row card_row--chart" style="height:270px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label">Arrecadação</span>
+                                        <div class="textfield_input">R$ 600,00</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label"></span>
+                                        <div class="textfield_input">84,6%</div>
+                                    </div>
+                                </div>  
+                                <div class="card_row align--right">
+                                    <a href="gerente-sorteio.html" class="button button--flat blue-light"><i class="fa fa-eye"></i> visualizar</a>                          
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card grid-u-1 grid-u-sm-1-2 grid-u-md-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Para a Formatura Tecnologia da Informação</span>
+                                    <span class="caption--bold">23/06/2016 10h30</span>
+                                </div>
+                                <div id="donutChartDiv3" class="card_row card_row--chart" style="height:270px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label">Arrecadação</span>
+                                        <div class="textfield_input">R$ 1.003,00</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-2">
+                                        <span class="textfield_label"></span>
+                                        <div class="textfield_input">100%</div>
+                                    </div>
+                                </div>  
+                                <div class="card_row align--right">
+                                    <a href="gerente-sorteio.html" class="button button--flat blue-light"><i class="fa fa-eye"></i> visualizar</a>                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="yellow-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="gerente-dashboard.html" class="body--semibold">Sorteios</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

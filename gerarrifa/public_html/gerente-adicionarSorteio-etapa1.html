@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Adicionar Sorteio</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon yellow-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="yellow-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Adicionar Sorteio</span></header>
+
+
+                <section class="light-theme align--center">
+                    
+                    <div class="card grid-u-1 grid-u-md-10-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--table">
+                                    <table class="table white-theme">
+                                        <thead>
+                                            <tr>
+                                                <th class="table_cell--non-numeric sort--disabled"></th>
+                                                <th class="table_cell--non-numeric sort--disabled">Sorteio BASIC</th>
+                                                <th class="table_cell--non-numeric sort--disabled">Sorteio PREMIUM</th>
+                                                <th class="table_cell--non-numeric sort--disabled">Sorteio DIAMOND</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="table_cell--header table_cell--non-numeric" colspan="4">FUNCIONALIDADES</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Modalidade de Sorteio</td>
+                                                <td class="table_cell--non-numeric">Programado</td>
+                                                <td class="table_cell--non-numeric">Programado ou Manual</td>
+                                                <td class="table_cell--non-numeric">Programado ou Manual</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Bilhetes Virtuais</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Bilhetes Impressos</td>
+                                                <td class="table_cell--non-numeric">Não</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Bilhetes Online</td>
+                                                <td class="table_cell--non-numeric">Não</td>
+                                                <td class="table_cell--non-numeric">Não</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Notificações por E-mail</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Notificações por SMS</td>
+                                                <td class="table_cell--non-numeric">Não</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Análise de Arrecadação</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Chat</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Histórico de Atividades</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                                <td class="table_cell--non-numeric">Sim</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--header table_cell--non-numeric" colspan="4">LIMITAÇÕES</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Tempo Mínimo de Arrecadação</td>
+                                                <td class="table_cell--non-numeric">25 dias</td>
+                                                <td class="table_cell--non-numeric">10 dias</td>
+                                                <td class="table_cell--non-numeric">Ilimitado</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Tempo Máximo de Arrecadação</td>
+                                                <td class="table_cell--non-numeric">35 dias</td>
+                                                <td class="table_cell--non-numeric">90 dias</td>
+                                                <td class="table_cell--non-numeric">Ilimitado</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade Máxima de Vendedores</td>
+                                                <td class="table_cell--non-numeric">30 vendedores</td>
+                                                <td class="table_cell--non-numeric">50 vendedores</td>
+                                                <td class="table_cell--non-numeric">Ilimitado</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade Máxima de Bilhetes</td>
+                                                <td class="table_cell--non-numeric">400 bilhetes</td>
+                                                <td class="table_cell--non-numeric">800 bilhetes</td>
+                                                <td class="table_cell--non-numeric">Ilimitado</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--header table_cell--non-numeric" colspan="4">PREÇO</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Tempo de Arrecadação Extra</td>
+                                                <td class="table_cell--non-numeric">R$ 0,50  por cada dia extra</td>
+                                                <td class="table_cell--non-numeric">R$ 0,75  por cada dia extra</td>
+                                                <td class="table_cell--non-numeric">R$ 0,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade de Vendedores Extra</td>
+                                                <td class="table_cell--non-numeric">R$ 1,00  por cada vendedor extra</td>
+                                                <td class="table_cell--non-numeric">R$ 1,50 por cada vendedor extra</td>
+                                                <td class="table_cell--non-numeric">R$ 0,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Quantidade de Bilhetes Extra</td>
+                                                <td class="table_cell--non-numeric">5% do valor de cada bilhete extra</td>
+                                                <td class="table_cell--non-numeric">7% do valor de cada bilhete extra</td>
+                                                <td class="table_cell--non-numeric">0%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table_cell--non-numeric">Preço Fixo</td>
+                                                <td class="table_cell--non-numeric">R$ 0,00</td>
+                                                <td class="table_cell--non-numeric">R$ 50,00</td>
+                                                <td class="table_cell--non-numeric">R$ 100,00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th class="table_cell--non-numeric">total</th>
+                                                <td class="table_cell--non-numeric">R$ 0,00 + excedentes</td>
+                                                <td class="table_cell--non-numeric">R$ 50,00 + excedentes</td>
+                                                <td class="table_cell--non-numeric">R$ 100,00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="table_cell--non-numeric"></th>
+                                                <td class="table_cell--non-numeric"><a href="gerente-adicionarSorteio.html" class="button button--raised-primary green-light"><i class="fa fa-plus"></i> basic</a></td>
+                                                <td class="table_cell--non-numeric"><a href="gerente-adicionarSorteio.html" class="button button--raised-primary green-light"><i class="fa fa-plus"></i> premium</a></td>
+                                                <td class="table_cell--non-numeric"><a href="gerente-adicionarSorteio.html" class="button button--raised-primary green-light"><i class="fa fa-plus"></i> diamond</a></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="yellow-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="gerente-dashboard.html" class="body--semibold">Sorteios</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

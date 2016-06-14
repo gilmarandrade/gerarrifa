@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Chat</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon blue-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="blue-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Chat</span></header>
+
+                <section class="light-theme">
+
+                    <style>
+                        .users-list .list_item:hover{
+                            background-image: linear-gradient( rgba(51, 51, 51, .1) 0%, rgba(51, 51, 51, .1) 100%);
+                        }
+                        .messages-list .list_item{
+                            clear: both;
+                            padding-bottom: 20px;
+                        }
+                        .users-list .list_item.notification{
+                            background-color: rgba(247, 170,6,.3);
+                        }
+                        .messages-list .text--two-line{
+                            height: auto;
+                        } 
+                        .messages-list .text--two-line span:last-child{
+                            white-space: normal;
+                            line-height: normal;
+                        }
+                    </style>
+                    <div class="card grid-u-1 grid-u-sm-1-3">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row">
+                                    <div class="textfield blue-light grid-u-1">
+                                        <input class="textfield_input" type="text" id="sample1" >
+                                        <label class="textfield_label" for="sample1">Pesquisar</label>
+                                        <span class="textfield_helper">O valor informado é inválido.</span>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--scroll" style="height:500px;">
+                                    <ul class="users-list list white-theme list--secondary-content  list--two-line">
+                                        <li class="list_item notification">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user1.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Grupo Sorteio Universitário</span>
+                                                <span><a href="gerente-vendedor.html">Allan:</a> Olá, gostaria de dizer que aquele pagamanto foi confirmado.</span>
+                                            </span>
+                                            <span class="list_caption">14:55</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user3.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Roger Mayer</span>
+                                                <span>Olá, gostaria de dizer que aquele pagamanto foi confirmado.</span>
+                                            </span>
+                                            <span class="list_caption">14:55</span>
+                                        </li>
+                                        <li class="list_item notification">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user6.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Sophie Charlot</span>
+                                                <span>kkkk</span>
+                                            </span>
+                                            <span class="list_caption">14:12</span>
+                                        </li>
+                                        <li class="list_item notification">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user7.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jhon Connor</span>
+                                                <span><a href="gerente-vendedor.html">Você:</a> Ei</span>
+                                            </span>
+                                            <span class="list_caption">11:10</span>
+                                        </li>
+                                        <li class="list_item notification">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user23.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>George Orwell</span>
+                                                <span>O sorteio será amanhã msm?</span>
+                                            </span>
+                                            <span class="list_caption">sab</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user24.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Alan Brandon</span>
+                                                <span>Se você não for eu vou</span>
+                                            </span>
+                                            <span class="list_caption">sex</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user20.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span><a href="gerente-vendedor.html">Você:</a> Não tem problema, ele pode fazer o pagamento online. Pode ser ainda hj se ele puder.</span>
+                                            </span>
+                                            <span class="list_caption">13/04/2016</span>
+                                        </li>
+                                        <li class="list_item notification">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user27.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Grupo Sorteio Universitário</span>
+                                                <span><a href="gerente-vendedor.html">Allan:</a> Olá, gostaria de dizer que aquele pagamanto foi confirmado.</span>
+                                            </span>
+                                            <span class="list_caption">14:55</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user26.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Roger Mayer</span>
+                                                <span>Olá, gostaria de dizer que aquele pagamanto foi confirmado.</span>
+                                            </span>
+                                            <span class="list_caption">14:55</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user3.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Sophie Charlot</span>
+                                                <span>kkkk</span>
+                                            </span>
+                                            <span class="list_caption">14:12</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user21.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jhon Connor</span>
+                                                <span><a href="gerente-vendedor.html">Você:</a> Ei</span>
+                                            </span>
+                                            <span class="list_caption">11:10</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user20.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>George Orwell</span>
+                                                <span>O sorteio será amanhã msm?</span>
+                                            </span>
+                                            <span class="list_caption">sab</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user30.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Alan Brandon</span>
+                                                <span>Se você não for eu vou</span>
+                                            </span>
+                                            <span class="list_caption">sex</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span><a href="gerente-vendedor.html">Você:</a> Não tem problema, ele pode fazer o pagamento online. Pode ser ainda hj se ele puder.</span>
+                                            </span>
+                                            <span class="list_caption">13/04/2016</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card grid-u-1 grid-u-sm-2-3">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header">
+                                    <h2 class="header_title">Thomas Jefferson</h2>
+                                    <span class="caption">visto 3 horas atrás</span>
+                                </div>
+                                <div class="card_row card_row--scroll" style="height:410px;">
+                                    <ul class="messages-list list white-theme list--secondary-content">
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span>Olá</span>
+                                            </span>
+                                            <span class="list_caption">11 jun, 20:30</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user15.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jonh Connor</span>
+                                                <span>Oi<br/>Seja bem vindo a equipe!</span>
+                                            </span>
+                                            <span class="list_caption">12 jun, 08:42</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span>obrigado<br/>ja posso começar a vender?</span>
+                                            </span>
+                                            <span class="list_caption">12 jun, 13:02</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user15.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jonh Connor</span>
+                                                <span>já era pra ter começado ;-)</span>
+                                            </span>
+                                            <span class="list_caption">12 jun, 13:26</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span>ta ok</span>
+                                            </span>
+                                            <span class="list_caption">12 jun, 13:27</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user15.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jonh Connor</span>
+                                                <span>kkk</span>
+                                            </span>
+                                            <span class="list_caption">12 jun, 13:27</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span>Ei<br/> o que eu faço com aquele menino lá?<br/>Ele viajou<br/>não tem como entregar o dinheiro</span>
+                                            </span>
+                                            <span class="list_caption">08:01</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user15.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Jonh Connor</span>
+                                                <span>Não tem problema<br/>ele pode comprar bilhetes online.<br/>Ou você marca os buktea dele como reservados.<br/><br/>*bilhetes</span>
+                                            </span>
+                                            <span class="list_caption">15:55</span>
+                                        </li>
+                                        <li class="list_item">
+                                            <span class="avatar white-theme">
+                                                <img alt="imagem" src="img/user13.jpg"/>
+                                            </span>
+                                            <span class="text--two-line">
+                                                <span>Thomas Jefferson</span>
+                                                <span>Valeu</span>
+                                            </span>
+                                            <span class="list_caption">16:08</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="card_row grid-g card_row--large" style="margin-left:50px;">
+                                    <div class="textfield blue-light grid-u-1" >
+                                        <input class="textfield_input" type="text" id="mensagem" value="">
+                                        <label class="textfield_label" for="mensagem">Escreva uma mensagem...</label>
+                                        <span class="textfield_helper"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="blue-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item">
+                        <span class="subtitle">Sorteio</span>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-dashboard.html" class="body--semibold">Visão Geral</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-equipe.html" class="body--semibold">Equipe</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-meusBilhetes.html" class="body--semibold">Meus Bilhetes</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-venderBilhetes.html" class="body--semibold">Vender Bilhetes</a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="vendedor-chat.html" class="body--semibold">Chat</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Vender Bilhetes</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!--google chart-->
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load("current", {packages: ["corechart", "bar", "line"]});
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart3);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart3() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Total', 'Bilhetes Impressos'],
+                    ['Vendidos', 478],
+                    ['Reservados', 141],
+                    ['Disponíveis', 230]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none',
+                    slices: {
+                        2: {color: '#999999'}
+                    }
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv3'));
+                chart.draw(data, options);
+            }
+
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart4);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart4() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Total', 'Bilhetes Virtuais'],
+                    ['Vendidos', 234],
+                    ['Reservados', 45]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none'
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv4'));
+                chart.draw(data, options);
+            }
+
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart5);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart5() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Total', 'Bilhetes Online'],
+                    ['Vendidos', 163],
+                    ['Reservados', 207]
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none'
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv5'));
+                chart.draw(data, options);
+            }
+
+
+            $(window).resize(function() {
+                setTimeout(drawDonutChart3, 500);
+                setTimeout(drawDonutChart4, 500);
+                setTimeout(drawDonutChart5, 500);
+            });
+        </script>
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon blue-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="blue-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Vender Bilhetes</span></header>
+
+                <section class="light-theme">
+
+                    <div class="card grid-u-1 grid-u-sm-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Bilhetes Impressos</span>
+                                    <span class="title-display">879</span>
+                                </div>
+                                <div id="donutChartDiv3" class="card_row card_row--chart" style="height:300px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Disponíveis</span>
+                                        <div class="textfield_input">230</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Reservados</span>
+                                        <div class="textfield_input">141</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Vendididos</span>
+                                        <div class="textfield_input">478</div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card grid-u-1 grid-u-sm-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Bilhetes Virtuais</span>
+                                    <span class="title-display">245</span>
+                                </div>
+                                <div id="donutChartDiv4" class="card_row card_row--chart" style="height:300px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Reservados</span>
+                                        <div class="textfield_input">45</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Vendididos</span>
+                                        <div class="textfield_input">234</div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card grid-u-1 grid-u-sm-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Bilhetes Online</span>
+                                    <span class="title-display">305</span>
+                                </div>
+                                <div id="donutChartDiv5" class="card_row card_row--chart" style="height:300px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Reservados</span>
+                                        <div class="textfield_input">207</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Vendididos</span>
+                                        <div class="textfield_input">163</div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                           <div class="card grid-u-1">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+
+                                <div class="card_row card_row--large card_row--inline-controls">
+                                    <div class="align--left">
+                                        <span class="header_title">Vender Bilhetes Virtuais</span>
+                                    </div>
+                                    <div class="align--right">
+                                        <span class="avatar avatar--one-line light-theme">
+                                            <img alt="imagem" src="img/user1.jpg"/>
+                                            <span>Jonas Connor</span>
+                                        </span>  
+                                    </div>
+                                    <div class="align--clear"></div>
+
+                                </div>
+                                <div class="card_row card_row--large">
+                                    <span class="header_subtitle">Dados do Comprador</span>
+                                </div>
+                                <div class="card_row grid-g">
+
+
+                                    <div class="textfield textfield--floating-label is-required yellow-light grid-u-1 grid-u-sm-4-12 ">
+                                        <input class="textfield_input" type="email" id="sample2" required value="mary@email.com">
+                                        <label class="textfield_label" for="sample2">E-mail</label>
+                                        <span class="textfield_helper">Informe um e-mail válido.</span>
+                                    </div>
+
+                                    <div class="textfield grid-u-1 grid-u-sm-3-12 textfield--floating-label yellow-light">
+                                        <input class="textfield_input" type="text" id="sample-4" pattern="\([0-9][0-9]\) [0-9]{5}-[0-9]{4}" value="">
+                                        <label class="textfield_label" for="sample-4">Telefone</label>
+                                        <span class="textfield_helper">Formato: (xx) xxxxx-xxxx.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label yellow-light is-required grid-u-1 grid-u-sm-5-12">
+                                        <input class="textfield_input" type="text" id="nome" value="Maria Silvia" required>
+                                        <label class="textfield_label" for="nome">Nome</label>
+                                        <span class="textfield_helper">Por favor, preencha este campo.</span>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--large">
+                                    <span class="header_subtitle">Bilhetes</span>
+                                </div>
+
+                                <div class="card_row grid-g card_row--large">
+
+                                    <div class="grid-u-1">
+                                        <div class="textfield textfield--primary textfield--floating-label yellow-light is-required grid-u-4-12 grid-u-sm-2-12">
+                                            <input class="textfield_input" type="text" id="qtd" value="1" pattern="#[1-9][0-9]+" maxlength="7" required style="text-transform:uppercase;">
+                                            <label class="textfield_label" for="qtd">Quantidade</label>
+                                            <span class="textfield_helper">informe somente números.</span>
+                                        </div>
+                                        <button class="button button--raised-primary yellow-light"><i class="fa fa-plus"></i> bilhetes</button>
+                                    </div>
+                                </div>
+                                <div class="card_row grid-g card_row--large light-theme">
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete1" value="#gera51" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete1">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+                                    <div class="textfield textfield--primary yellow-light is-invalid is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete2" value="#df5581" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete2">Código do Bilhete</label>
+                                        <span class="textfield_helper">Bilhete não disponível.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-invalid is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete3" value="#777777" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete3">Código do Bilhete</label>
+                                        <span class="textfield_helper">Bilhete não disponível.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete4" value="#94x6g0" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete4">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete5" value="#TIDSW1" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete5">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--large card_row--inline-controls light-theme">
+
+                                    <div class="align--right">
+                                        <span class="caption">5 bilhetes</span><span class="body--bold">Total: R$ 5,00</span>
+                                    </div>
+
+                                </div>
+                                <div class="card_row card_row--large card_row--inline-controls">
+                                    <div class="align--left">
+                                        <label class="checkbox green-light" for="checkbox-1">
+                                            <input type="checkbox" class="checkbox_input" id="checkbox-1" value="...">
+                                            <span class="checkbox_box-outline"><span class="checkbox_tick-outline"></span></span>
+                                            <span class="checkbox_label">Enviar notificações</span>
+                                        </label>
+                                    </div>
+                                    <div class="align--right">
+                                        <button class="button button--raised-primary green-light">Vender</button>
+                                    </div>
+                                    <div class="align--clear"></div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="blue-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item">
+                        <span class="subtitle">Sorteio</span>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-dashboard.html" class="body--semibold">Visão Geral</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-equipe.html" class="body--semibold">Equipe</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-meusBilhetes.html" class="body--semibold">Meus Bilhetes</a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="vendedor-venderBilhetes.html" class="body--semibold">Vender Bilhetes</a>
+                    </li>
+                    <li class="nav-list_item">
+                        <a href="vendedor-chat.html" class="body--semibold">Chat</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

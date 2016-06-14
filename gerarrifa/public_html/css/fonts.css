@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('../font/OpenSans-Light.ttf') ;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../font/OpenSans-Regular.ttf') ;
+}
+@font-face {
+  font-family: 'Open Sans SemiBold';
+  src: url('../font/OpenSans-Semibold.ttf') ;
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('../font/OpenSans-Bold.ttf') ;
+}
+@font-face {
+  font-family: 'Open Sans ExtraBold';
+  src: url('../font/OpenSans-ExtraBold.ttf') ;
+}
+@font-face {
+  font-family: 'Static Bold';
+  src: url('../font/Static_Bold.otf') ;
+}
+
+.f1{
+    font-family: "Open Sans Light", sans-serif;
+}
+.f2{
+    font-family: "Open Sans", sans-serif;
+}
+.f3{
+    font-family: "Open Sans SemiBold", sans-serif;
+}
+.f4{
+    font-family: "Open Sans Bold", sans-serif;
+}
+.f5{
+    font-family: "Open Sans ExtraBold", sans-serif;
+}
+.f6{
+    font-family: "Static", sans-serif;
+}

@@ -1,0 +1,925 @@
+/*!
+Pure v0.6.0
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
+
+.grid-g {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal; /* reset IE < 8 */
+    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+    /*
+    Sets the font stack to fonts known to work properly with the above letter
+    and word spacings. See: https://github.com/yahoo/pure/issues/41/
+
+    The following font stack makes Pure Grids work on all known environments.
+
+    * FreeSans: Ships with many Linux distros, including Ubuntu
+
+    * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
+      Arial to get picked up by the browser, even though neither is available
+      in Chrome OS.
+
+    * Droid Sans: Ships with all versions of Android.
+
+    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
+    */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
+    /*
+    Use flexbox when possible to avoid `letter-spacing` side-effects.
+
+    NOTE: Firefox (as of 25) does not currently support flex-wrap, so the
+    `-moz-` prefix version is omitted.
+    */
+
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+
+    /* IE10 uses display: flexbox */
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+
+    /* Prevents distributing space between rows */
+    -ms-align-content: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+
+/* Opera as of 12 on Windows needs word-spacing.
+   The ".opera-only" selector is used to prevent actual prefocus styling
+   and is not required in markup.
+*/
+.opera-only :-o-prefocus,
+.grid-g {
+    word-spacing: -0.43em;
+}
+
+.grid-u {
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+/*
+Resets the font family back to the OS/browser's default sans-serif font,
+this the same font stack that Normalize.css sets for the `body`.
+*/
+.grid-g [class *= "grid-u"] {
+    font-family: sans-serif;
+    transition: width .2s ease;
+}
+
+/**
+* Gutter and margin
+*/
+
+.gutter-4, .margin-4{
+    margin-left: .25em;
+    margin-right: .25em;
+}
+.gutter-8, .margin-8{
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.gutter-16, .margin-16{
+    margin-left: .75em;
+    margin-right: .75em;
+}
+.gutter-20, .margin-20{
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+}
+.vertical-margin-4{
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+.vertical-margin-8{
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+.vertical-margin-16{
+    margin-top: .75em;
+    margin-bottom: .75em;
+}
+.vertical-margin-20{
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+
+.grid-u-0{
+    width: 0%;
+}
+
+.grid-u-1,
+.grid-u-1-1,
+.grid-u-1-2,
+.grid-u-1-3,
+.grid-u-2-3,
+.grid-u-1-4,
+.grid-u-3-4,
+.grid-u-1-6,
+.grid-u-5-6,
+.grid-u-1-12,
+.grid-u-2-12,
+.grid-u-3-12,
+.grid-u-4-12,
+.grid-u-5-12,
+.grid-u-6-12,
+.grid-u-7-12,
+.grid-u-8-12,
+.grid-u-9-12,
+.grid-u-10-12,
+.grid-u-11-12,
+.grid-u-12-12 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.grid-u-1-12 {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+
+.grid-u-1-6,
+.grid-u-2-12 {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+
+.grid-u-1-4,
+.grid-u-3-12 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.grid-u-1-3,
+.grid-u-4-12 {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+
+.grid-u-5-12 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+
+.grid-u-1-2,
+.grid-u-6-12 {
+    width: 50%;
+    *width: 49.9690%;
+}
+
+.grid-u-7-12 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+
+.grid-u-2-3,
+.grid-u-8-12 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+
+.grid-u-3-4,
+.grid-u-9-12 {
+    width: 75%;
+    *width: 74.9690%;
+}
+
+.grid-u-5-6,
+.grid-u-10-12 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+
+.grid-u-11-12 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+
+.grid-u-1,
+.grid-u-1-1,
+.grid-u-12-12 {
+    width: 100%;
+}
+
+/* Esconde um elemento quando o breakpoint é atingido.*/
+.hidden, [hidden], .grid-u-hidden{
+    display: none !important;
+}
+/* Mostra um elemento quando o breakpoint é atingido.*/
+.visible, .grid-u-visible{
+    display: inline-block !important;
+    *display: inline !important; /* IE < 8: fake inline-block */
+}
+
+@media screen and (min-width: 30em) {
+
+    .grid-u-xsm-0{
+        width: 0%;
+    }
+
+
+    .grid-u-xsm-1,
+    .grid-u-xsm-1-1,
+    .grid-u-xsm-1-2,
+    .grid-u-xsm-1-3,
+    .grid-u-xsm-2-3,
+    .grid-u-xsm-1-4,
+    .grid-u-xsm-3-4,
+    .grid-u-xsm-1-6,
+    .grid-u-xsm-5-6,
+    .grid-u-xsm-1-12,
+    .grid-u-xsm-2-12,
+    .grid-u-xsm-3-12,
+    .grid-u-xsm-4-12,
+    .grid-u-xsm-5-12,
+    .grid-u-xsm-6-12,
+    .grid-u-xsm-7-12,
+    .grid-u-xsm-8-12,
+    .grid-u-xsm-9-12,
+    .grid-u-xsm-10-12,
+    .grid-u-xsm-11-12,
+    .grid-u-xsm-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-xsm-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-xsm-1-6,
+    .grid-u-xsm-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-xsm-1-4,
+    .grid-u-xsm-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-xsm-1-3,
+    .grid-u-xsm-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-xsm-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-xsm-1-2,
+    .grid-u-xsm-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-xsm-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-xsm-2-3,
+    .grid-u-xsm-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-xsm-3-4,
+    .grid-u-xsm-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-xsm-5-6,
+    .grid-u-xsm-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-xsm-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-xsm-1,
+    .grid-u-xsm-1-1,
+    .grid-u-xsm-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-xsm-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-xsm-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}
+
+@media screen and (min-width: 37.5em) {
+
+    .grid-u-sm-0{
+        width: 0%;
+    }
+
+
+    .grid-u-sm-1,
+    .grid-u-sm-1-1,
+    .grid-u-sm-1-2,
+    .grid-u-sm-1-3,
+    .grid-u-sm-2-3,
+    .grid-u-sm-1-4,
+    .grid-u-sm-3-4,
+    .grid-u-sm-1-6,
+    .grid-u-sm-5-6,
+    .grid-u-sm-1-12,
+    .grid-u-sm-2-12,
+    .grid-u-sm-3-12,
+    .grid-u-sm-4-12,
+    .grid-u-sm-5-12,
+    .grid-u-sm-6-12,
+    .grid-u-sm-7-12,
+    .grid-u-sm-8-12,
+    .grid-u-sm-9-12,
+    .grid-u-sm-10-12,
+    .grid-u-sm-11-12,
+    .grid-u-sm-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-sm-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-sm-1-6,
+    .grid-u-sm-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-sm-1-4,
+    .grid-u-sm-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-sm-1-3,
+    .grid-u-sm-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-sm-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-sm-1-2,
+    .grid-u-sm-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-sm-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-sm-2-3,
+    .grid-u-sm-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-sm-3-4,
+    .grid-u-sm-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-sm-5-6,
+    .grid-u-sm-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-sm-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-sm-1,
+    .grid-u-sm-1-1,
+    .grid-u-sm-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-sm-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-sm-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}
+
+@media screen and (min-width: 48em) {
+
+    .grid-u-md-0{
+        width: 0%;
+    }
+
+
+    .grid-u-md-1,
+    .grid-u-md-1-1,
+    .grid-u-md-1-2,
+    .grid-u-md-1-3,
+    .grid-u-md-2-3,
+    .grid-u-md-1-4,
+    .grid-u-md-3-4,
+    .grid-u-md-1-6,
+    .grid-u-md-5-6,
+    .grid-u-md-1-12,
+    .grid-u-md-2-12,
+    .grid-u-md-3-12,
+    .grid-u-md-4-12,
+    .grid-u-md-5-12,
+    .grid-u-md-6-12,
+    .grid-u-md-7-12,
+    .grid-u-md-8-12,
+    .grid-u-md-9-12,
+    .grid-u-md-10-12,
+    .grid-u-md-11-12,
+    .grid-u-md-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-md-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-md-1-6,
+    .grid-u-md-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-md-1-4,
+    .grid-u-md-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-md-1-3,
+    .grid-u-md-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-md-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-md-1-2,
+    .grid-u-md-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-md-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-md-2-3,
+    .grid-u-md-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-md-3-4,
+    .grid-u-md-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-md-5-6,
+    .grid-u-md-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-md-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-md-1,
+    .grid-u-md-1-1,
+    .grid-u-md-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-md-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-md-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}
+
+@media screen and (min-width: 64em) {
+
+    .grid-u-lg-0{
+        width: 0%;
+    }
+
+
+    .grid-u-lg-1,
+    .grid-u-lg-1-1,
+    .grid-u-lg-1-2,
+    .grid-u-lg-1-3,
+    .grid-u-lg-2-3,
+    .grid-u-lg-1-4,
+    .grid-u-lg-3-4,
+    .grid-u-lg-1-6,
+    .grid-u-lg-5-6,
+    .grid-u-lg-1-12,
+    .grid-u-lg-2-12,
+    .grid-u-lg-3-12,
+    .grid-u-lg-4-12,
+    .grid-u-lg-5-12,
+    .grid-u-lg-6-12,
+    .grid-u-lg-7-12,
+    .grid-u-lg-8-12,
+    .grid-u-lg-9-12,
+    .grid-u-lg-10-12,
+    .grid-u-lg-11-12,
+    .grid-u-lg-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-lg-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-lg-1-6,
+    .grid-u-lg-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-lg-1-4,
+    .grid-u-lg-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-lg-1-3,
+    .grid-u-lg-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-lg-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-lg-1-2,
+    .grid-u-lg-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-lg-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-lg-2-3,
+    .grid-u-lg-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-lg-3-4,
+    .grid-u-lg-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-lg-5-6,
+    .grid-u-lg-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-lg-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-lg-1,
+    .grid-u-lg-1-1,
+    .grid-u-lg-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-lg-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-lg-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}
+
+@media screen and (min-width: 80em) {
+
+    .grid-u-xlg-0{
+        width: 0%;
+    }
+
+
+    .grid-u-xlg-1,
+    .grid-u-xlg-1-1,
+    .grid-u-xlg-1-2,
+    .grid-u-xlg-1-3,
+    .grid-u-xlg-2-3,
+    .grid-u-xlg-1-4,
+    .grid-u-xlg-3-4,
+    .grid-u-xlg-1-6,
+    .grid-u-xlg-5-6,
+    .grid-u-xlg-1-12,
+    .grid-u-xlg-2-12,
+    .grid-u-xlg-3-12,
+    .grid-u-xlg-4-12,
+    .grid-u-xlg-5-12,
+    .grid-u-xlg-6-12,
+    .grid-u-xlg-7-12,
+    .grid-u-xlg-8-12,
+    .grid-u-xlg-9-12,
+    .grid-u-xlg-10-12,
+    .grid-u-xlg-11-12,
+    .grid-u-xlg-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-xlg-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-xlg-1-6,
+    .grid-u-xlg-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-xlg-1-4,
+    .grid-u-xlg-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-xlg-1-3,
+    .grid-u-xlg-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-xlg-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-xlg-1-2,
+    .grid-u-xlg-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-xlg-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-xlg-2-3,
+    .grid-u-xlg-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-xlg-3-4,
+    .grid-u-xlg-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-xlg-5-6,
+    .grid-u-xlg-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-xlg-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-xlg-1,
+    .grid-u-xlg-1-1,
+    .grid-u-xlg-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-xlg-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-xlg-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}
+
+@media screen and (min-width: 120em) {
+
+    .grid-u-xxlg-0{
+        width: 0%;
+    }
+
+
+    .grid-u-xxlg-1,
+    .grid-u-xxlg-1-1,
+    .grid-u-xxlg-1-2,
+    .grid-u-xxlg-1-3,
+    .grid-u-xxlg-2-3,
+    .grid-u-xxlg-1-4,
+    .grid-u-xxlg-3-4,
+    .grid-u-xxlg-1-6,
+    .grid-u-xxlg-5-6,
+    .grid-u-xxlg-1-12,
+    .grid-u-xxlg-2-12,
+    .grid-u-xxlg-3-12,
+    .grid-u-xxlg-4-12,
+    .grid-u-xxlg-5-12,
+    .grid-u-xxlg-6-12,
+    .grid-u-xxlg-7-12,
+    .grid-u-xxlg-8-12,
+    .grid-u-xxlg-9-12,
+    .grid-u-xxlg-10-12,
+    .grid-u-xxlg-11-12,
+    .grid-u-xxlg-12-12 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-u-xxlg-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-u-xxlg-1-6,
+    .grid-u-xxlg-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-u-xxlg-1-4,
+    .grid-u-xxlg-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-u-xxlg-1-3,
+    .grid-u-xxlg-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+    .grid-u-xxlg-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-u-xxlg-1-2,
+    .grid-u-xxlg-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-u-xxlg-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+    .grid-u-xxlg-2-3,
+    .grid-u-xxlg-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-u-xxlg-3-4,
+    .grid-u-xxlg-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-u-xxlg-5-6,
+    .grid-u-xxlg-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-u-xxlg-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-u-xxlg-1,
+    .grid-u-xxlg-1-1,
+    .grid-u-xxlg-12-12 {
+        width: 100%;
+    }
+
+    /* Esconde um elemento quando o breakpoint é atingido.*/
+    .grid-u-xxlg-hidden{
+        display: none !important;
+    }
+    /* Mostra um elemento quando o breakpoint é atingido.*/
+    .grid-u-xxlg-visible{
+        display: inline-block !important;
+        *display: inline !important; /* IE < 8: fake inline-block */
+    }
+}

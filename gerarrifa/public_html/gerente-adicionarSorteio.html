@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Adicionar Sorteio</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function() {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon yellow-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="yellow-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Adicionar Sorteio</span></header>
+
+
+                <section class="light-theme align--center">
+                    <div class="card grid-u-1 grid-u-md-10-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header">
+                                    <span class="header_title">Pacote</span>
+                                </div>
+                                <div class="card_row grid-g">
+                                    <div class="selectfield grid-u-1-2 grid-u-sm-1-3 yellow-light">
+                                        <button class="selectfield_input" id="sample1"></button>
+                                        <ul class="selectfield_options">
+                                            <li data-value="Action 1" class="is-active">Basic</li>
+                                            <li data-value="Action 2">Premium</li>
+                                            <li data-value="Action 2">Diamond</li>
+                                        </ul>
+                                        <input type="hidden" id="selectfield1" value=""/>
+                                        <label class="selectfield_label" for="sample1">Tipo</label>
+                                    </div>
+                                    <div class="selectfield grid-u-1-2 grid-u-sm-1-3 yellow-light">
+                                        <button class="selectfield_input" id="modalidade"></button>
+                                        <ul class="selectfield_options">
+                                            <li data-value="Action 1" class="is-active"><i class="fa fa-clock-o"></i> Programado</li>
+                                            <li data-value="Action 1"><i class="fa fa-hand-pointer-o"></i> Manual</li>
+                                        </ul>
+                                        <input type="hidden" id="selectfield2" value=""/>
+                                        <label class="selectfield_label" for="modalidade">Modalidade de Sorteio</label>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--header">
+                                    <span class="header_title">Dados do Sorteio</span>
+                                </div>
+                                <div class="card_row grid-g card_row--large">
+                                    <div class="textfield textfield--floating-label is-required yellow-light grid-u-1">
+                                        <input class="textfield_input" type="text" id="titulo" required >
+                                        <label class="textfield_label" for="titulo">Título</label>
+                                        <span class="textfield_helper">Por favor, preencha este campo.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label yellow-light grid-u-1">
+                                        <textarea class="textfield_input" id="descricao" rows="8"></textarea>
+                                        <label class="textfield_label" for="descricao">Descrição</label>
+                                        <span class="textfield_helper">O valor informado é inválido.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label is-required grid-u-1 grid-u-sm-1-2 grid-u-sm-1-3 yellow-light">
+                                        <input class="textfield_input" type="text" id="meta" value="" pattern="[0-9]+[,]?[0-9]+" required>
+                                        <label class="textfield_label" for="meta">Meta de Arrecadação (R$)</label>
+                                        <span class="textfield_helper">Informe um valor em Reais.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label is-required grid-u-1 grid-u-sm-1-2 grid-u-sm-1-3 yellow-light">
+                                        <input class="textfield_input" type="text" id="preco" value="" pattern="[0-9]+[,]?[0-9]+" required>
+                                        <label class="textfield_label" for="preco">Preço do Bilhete (R$)</label>
+                                        <span class="textfield_helper">Informe um valor em Reais</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label is-required grid-u-1  grid-u-sm-1-2 grid-u-sm-3-12 yellow-light">
+                                        <input class="textfield_input" type="text" id="data" pattern="[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9] [0-9][0-9]:[0-9][0-9]" required>
+                                        <label class="textfield_label" for="data">Data</label>
+                                        <span class="textfield_helper">Formato: mm-dd-aaaa HH:MM.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label yellow-light grid-u-1">
+                                        <textarea class="textfield_input" id="local" rows="3"></textarea>
+                                        <label class="textfield_label" for="local">Local</label>
+                                        <span class="textfield_helper">O valor informado é inválido.</span>
+                                    </div>
+
+                                </div>
+                                <div class="card_row card_row--header" id="ancoraPremiacao">
+                                    <span class="header_title">Premiação</span>
+                                </div>
+                                <div class="card_row grid-g card_row--large">
+                                    <div class="grid-u-1">
+                                        <button class="button button--raised-primary blue-dark"><i class="fa fa-fw fa-camera"></i> Adicionar Imagem</button>
+                                    </div>
+                                    <div class="textfield textfield--floating-label is-required yellow-light grid-u-1">
+                                        <textarea class="textfield_input" id="premioDescricao" rows="8" required></textarea>
+                                        <label class="textfield_label" for="premioDescricao">Descrição</label>
+                                        <span class="textfield_helper">O valor informado é inválido.</span>
+                                    </div>
+
+                                </div>
+                                <div class="card_row card_row--large align--right">
+                                    <a href="gerente-dashboard.html" class="button button--raised-secondary yellow-light">Cancelar</a>
+                                    <a href="gerente-sorteio.html" class="button button--raised-primary yellow-light">Adicionar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="yellow-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item is-active">
+                        <a href="gerente-dashboard.html" class="body--semibold">Sorteios</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

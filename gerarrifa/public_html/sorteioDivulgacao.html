@@ -1,0 +1,532 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sorteio</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/panels.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/theme_cards.css">
+        <link rel="stylesheet" href="css/widgets.css">
+        <link href="css/prism.css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/panels.js"></script>
+        <script src="js/widgets.js"></script>
+        <script>
+            $(document).ready(function () {
+                initPanels();
+
+                initCheckbox();
+                initSwitch();
+                initRadiobutton();
+                initIcontoggle();
+                initTogglebutton();
+                initDropdown();
+                initTextfield();
+                initTab();
+                initTable();
+
+            });
+        </script>
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!--google chart-->
+        <script type="text/javascript">
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load("current", {packages: ["corechart", "bar", "line"]});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawDonutChart1);
+
+            // Callback that creates and populates a data table,
+            // instantiates the donut chart, passes in the data and
+            // draws it.
+            function drawDonutChart1() {
+                // Create the data table.        
+                var data = google.visualization.arrayToDataTable([
+                    ['Progresso', 'R$'],
+                    ['Vendido', 35],
+                    ['Reservado', 178],
+                    ['Pendente', 245]
+
+                ]);
+
+                // Set chart options
+                var options = {
+                    pieHole: 0.8,
+                    legend: 'none',
+                    pieSliceText: 'none',
+                    slices: {
+                        2: {color: '#999999'}
+
+                    }
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('donutChartDiv1'));
+                chart.draw(data, options);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+            // Fix responsive design bug
+            $(window).resize(function () {
+                setTimeout(drawDonutChart1, 500);
+
+            });
+        </script>
+    </head>
+
+    <body class="nav--closed">
+        <a id="top-button" class="button button--raised-primary button--only-icon green-light" href="#">
+            <i class="fa fa-fw fa-chevron-up"></i>
+        </a>
+        <div class="grid-g">
+
+            <main id="main" >
+                <header class="green-dark"><button id="nav_button" class="button button--flat dark"><i class="fa fa-navicon fa-fw"></i></button> <span class="header_title">Divulgação</span></header>
+
+                <section class="light-theme">
+                    <header>
+                        <h1 class="title-display">Rifa Universitária</h1>
+                    </header>
+
+                    <div class="card grid-u-1 grid-u-sm-8-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme" >
+                                <div class="card_row card_row--inline-controls card_row--large white-theme">
+                                    <div class="align--left">
+                                        <span class="header_title">Informações</span>
+                                    </div>
+                                    <div class="align--clear"></div>
+                                </div>
+                                <div class="card_row grid-g card_row--large">
+
+                                    <div class="textfield textfield--static textfield--floating-label light grid-u-1">
+                                        <div class="textfield_input">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia.</div>
+                                        <label class="textfield_label">Descrição</label>
+                                    </div>
+
+                                    <div class="textfield textfield--static textfield--primary textfield--floating-label grid-u-1 grid-u-sm-1-2 light">
+                                        <div class="textfield_input">R$ 1,00</div>
+                                        <label class="textfield_label">Preço do Bilhete</label>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary textfield--floating-label grid-u-1 grid-u-sm-1-2 light">
+                                        <div class="textfield_input">23/06/2016 10:30</div>
+                                        <label class="textfield_label">Data</label>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--floating-label grid-u-1 light">
+                                        <div class="textfield_input">Não definido</div>
+                                        <label class="textfield_label">Local</label>
+                                    </div>
+
+                                    <div class="textfield textfield--static textfield--floating-label grid-u-1 grid-u-sm-1-2 light">
+                                        <div class="textfield_input"><i class="fa fa-clock-o"></i> Em arrecadação</div>
+                                        <label class="textfield_label">Status</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card grid-u-1 grid-u-sm-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme" >
+                                <div class="card_row card_row--image-cover" style="height:300px; background-image:url('img/premio1.png');"></div>
+                                <div class="card_row card_row--inline-controls white-theme">
+                                    <div class="align--left">
+                                        <span class="header_title">Premiação</span>
+                                    </div>
+                                    <div class="align--clear"></div>
+                                </div>
+                                <div class="card_row card_row--text">
+                                    <p>Mauris sagittis pellentesque lacus eleifend lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="card grid-u-1 grid-u-sm-8-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+                                <div class="card_row card_row--header header--ellipsis">
+                                    <span class="header_title">Arrecadação</span>
+                                    <span class="title-display">46,5%</span>
+                                </div>
+                                <div id="donutChartDiv1" class="card_row card_row--chart" style="height:300px;"></div>
+                                <div class="card_row grid-g align--left">
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Meta</span>
+                                        <div class="textfield_input">700 bilhetes</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Vendido</span>
+                                        <div class="textfield_input">35 bilhetes</div>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--primary light grid-u-1-3">
+                                        <span class="textfield_label">Reservado</span>
+                                        <div class="textfield_input">178 bilhetes</div>
+                                    </div>
+                                </div> 
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card grid-u-1 grid-u-sm-4-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme" >
+                                <div class="card_row card_row--inline-controls">
+                                    <span class="caption">Vendedor:</span>
+                                    <span class="avatar avatar--one-line light-theme">
+                                        <img alt="imagem" src="img/user13.jpg"/>
+                                        <span>Jonh Connor</span>
+                                    </span>
+                                </div>
+                                <div class="card_row card_row--image-cover" style="height:260px; background-image:url('img/ganhador1.jpg');"></div>
+                                <div class="card_row card_row--inline-controls white-theme">
+                                    <div class="align--left">
+                                        <span class="header_title">Ganhador</span>
+                                    </div>
+
+                                    <div class="align--clear"></div>
+                                </div>
+                                <div class="card_row grid-g card_row--large">
+                                    <div class="textfield textfield--static textfield--primary textfield--floating-label light grid-u-1-2">
+                                        <div class="textfield_input">#54B2KT</div>
+                                        <label class="textfield_label">Bilhete</label>
+                                    </div>
+                                    <div class="textfield textfield--static textfield--floating-label light grid-u-1">
+                                        <div class="textfield_input">Alan Brandon</div>
+                                        <label class="textfield_label">Nome</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card grid-u-1 grid-u-md-7-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+
+                                <div class="card_row card_row--large card_row--inline-controls">
+                                    <div class="align--left">
+                                        <span class="header_title">Comprar Bilhetes</span>
+                                    </div>
+                                    <div class="align--right">
+                                        <span class="caption">Vendedor:</span>
+                                        <span class="avatar avatar--one-line light-theme">
+                                            <img alt="imagem" src="img/user1.jpg"/>
+                                            <span>Jonas Connor</span>
+                                        </span>  
+                                    </div>
+                                    <div class="align--clear"></div>
+
+                                </div>
+                                <div class="card_row card_row--large">
+                                    <span class="header_subtitle">Seus Dados</span>
+                                </div>
+                                <div class="card_row grid-g">
+
+
+                                    <div class="textfield textfield--floating-label is-required yellow-light grid-u-1 grid-u-sm-4-12 ">
+                                        <input class="textfield_input" type="email" id="sample2" required value="mary@email.com">
+                                        <label class="textfield_label" for="sample2">E-mail</label>
+                                        <span class="textfield_helper">Informe um e-mail válido.</span>
+                                    </div>
+
+                                    <div class="textfield grid-u-1 grid-u-sm-3-12 textfield--floating-label yellow-light">
+                                        <input class="textfield_input" type="text" id="sample-4" pattern="\([0-9][0-9]\) [0-9]{5}-[0-9]{4}" value="">
+                                        <label class="textfield_label" for="sample-4">Telefone</label>
+                                        <span class="textfield_helper">Formato: (xx) xxxxx-xxxx.</span>
+                                    </div>
+                                    <div class="textfield textfield--floating-label yellow-light is-required grid-u-1 grid-u-sm-5-12">
+                                        <input class="textfield_input" type="text" id="nome" value="Maria Silvia" required>
+                                        <label class="textfield_label" for="nome">Nome</label>
+                                        <span class="textfield_helper">Por favor, preencha este campo.</span>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--large">
+                                    <span class="header_subtitle">Bilhetes</span>
+                                </div>
+
+                                <div class="card_row grid-g card_row--large">
+
+                                    <div class="grid-u-1">
+                                        <div class="textfield textfield--primary textfield--floating-label yellow-light is-required grid-u-4-12 grid-u-sm-2-12">
+                                            <input class="textfield_input" type="text" id="qtd" value="1" pattern="#[1-9][0-9]+" maxlength="7" required style="text-transform:uppercase;">
+                                            <label class="textfield_label" for="qtd">Quantidade</label>
+                                            <span class="textfield_helper">informe somente números.</span>
+                                        </div>
+                                        <button class="button button--raised-primary yellow-light"><i class="fa fa-plus"></i> bilhetes</button>
+                                    </div>
+                                </div>
+                                <div class="card_row grid-g card_row--large light-theme">
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete1" value="#gera51" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete1">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+                                    <div class="textfield textfield--primary yellow-light is-invalid is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete2" value="#df5581" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete2">Código do Bilhete</label>
+                                        <span class="textfield_helper">Bilhete não disponível.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-invalid is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete3" value="#777777" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete3">Código do Bilhete</label>
+                                        <span class="textfield_helper">Bilhete não disponível.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete4" value="#94x6g0" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete4">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+
+                                    <div class="textfield textfield--primary yellow-light is-required grid-u-7-12 grid-u-sm-3-12">
+                                        <input class="textfield_input" type="text" id="bilhete5" value="#TIDSW1" pattern="#[0-9|A-Z|a-z]{6}" maxlength="7" required style="text-transform:uppercase;">
+                                        <label class="textfield_label" for="bilhete5">Código do Bilhete</label>
+                                        <span class="textfield_helper">informe 6 caracteres alfanuméricos, iniciando com #.</span>
+                                    </div>
+                                    <div class="grid-u-5-12 grid-u-sm-3-12">
+                                        <button class="button button--flat only-icon light" title="Gerar código aleatório" style="margin-left: 0;"><i class="fa fa-refresh"></i></button>
+                                        <button class="button button--flat only-icon light" title="Remover bilhete" style="margin-left: 0;"><i class="fa fa-close"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card_row card_row--large card_row--inline-controls light-theme">
+
+                                    <div class="align--right">
+                                        <span class="caption">5 bilhetes</span><span class="body--bold">Total: R$ 5,00</span>
+                                    </div>
+
+                                </div>
+                                <div class="card_row card_row--large card_row--inline-controls">
+                                    <div class="align--left">
+                                        <label class="checkbox green-light" for="checkbox-1">
+                                            <input type="checkbox" class="checkbox_input" id="checkbox-1" value="...">
+                                            <span class="checkbox_box-outline"><span class="checkbox_tick-outline"></span></span>
+                                            <span class="checkbox_label">Receber notificações por e-mail</span>
+                                        </label>
+                                    </div>
+                                    <div class="align--right">
+                                        <button class="button button--raised-primary green-light"><i class="fa fa-paypal"></i> comprar</button>
+                                    </div>
+                                    <div class="align--clear"></div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card grid-u-1 grid-u-md-5-12">
+                        <div class="card_margin">
+                            <div class="card_box white-theme">
+
+                                <div class="card_row card_row--header">
+                                    <h2 class="header_title">Seus Bilhetes</h2>
+                                    <span class="title-display">8</span>
+                                </div>
+                                <div class="card_row card_row--scroll" style="height: 630px;">
+                                    <div class="card_row grid-u-1">
+                                        <h2 class="header_subtitle">Online (4)</h2>
+                                    </div>
+
+                                    <div class="card_row card_row--table">
+                                        <table class="table yellow-white">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#457JK0</span></td>
+                                                    <td><span class="caption">reservado</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user12.jpg"/>
+                                                        </span>
+                                                    </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#ABCE10</span></td>
+                                                    <td><span class="caption">reservado</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user12.jpg"/>
+                                                        </span>
+
+                                                    </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#REGINA</span></td>
+                                                    <td><span class="caption">pago</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user12.jpg"/>
+                                                        </span>
+
+                                                    </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#230695</span></td>
+                                                    <td><span class="caption">reservado</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user12.jpg"/>
+                                                        </span>
+
+                                                    </td>
+                                                </tr> 
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="card_row grid-u-1">
+                                        <h2 class="header_subtitle">Virtual (3)</h2>
+                                    </div>
+
+                                    <div class="card_row card_row--table">
+                                        <table class="table yellow-white">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#S2S2S2 </span></td>
+                                                    <td><span class="caption">pago</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user7.jpg"/>
+                                                        </span>
+                                                    </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#7SORTE </span></td>
+                                                    <td><span class="caption">pago</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user7.jpg"/>
+                                                        </span>
+
+                                                    </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#101011 </span></td>
+                                                    <td><span class="caption">pago</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user7.jpg"/>
+                                                        </span>
+
+                                                    </td>
+                                                </tr> 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="card_row grid-u-1">
+                                        <h2 class="header_subtitle">Impresso (1)</h2>
+                                    </div>
+
+                                    <div class="card_row card_row--table" >
+                                        <table class="table yellow-white">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="table_cell--non-numeric"><span class="title-display">#Z6B1V9</span></td>
+                                                    <td><span class="caption">pago</span></td>
+                                                    <td class="table_cell--non-numeric">
+
+                                                        <span class="avatar white-theme">
+                                                            <img alt="imagem" src="img/user23.jpg"/>
+                                                        </span>
+                                                    </td>
+                                                </tr> 
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>  
+                        </div>
+                    </div>
+
+
+
+
+
+                </section>
+
+            </main>
+            <div id="nav_curtain"></div>
+            <nav  id="nav" class="yellow-white">
+                <ul class="nav-list white-theme">
+                    <li class="nav-list_item logo card--divider">
+                        <a href="index.html" ></a>
+                    </li>
+                    <li class="nav-list_item ">
+                        <span class="subtitle">Sorteio</span>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>
